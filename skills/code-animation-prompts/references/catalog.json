@@ -1,6 +1,6 @@
 {
   "total": 341,
-  "with_still": 242,
+  "with_still": 196,
   "series": [
     {
       "id": "AG",
@@ -798,88 +798,88 @@
     },
     {
       "id": "M14",
-      "name": "",
+      "name": "纪录片访谈体",
       "series": "M",
-      "category": "其他特别的风格",
-      "description": "",
-      "fit": "",
+      "category": "情绪和氛围类（感受线最常用）",
+      "description": "访谈说话为主线，插空镜；手持微晃、沉色调，人名条只出现一次。",
+      "fit": "讲一个真实的人、复盘一段经历、“这件事背后的人”。",
       "tags": [],
       "file": "assets/library/风格提示词/M_动态风格/M14_.md",
       "image": ""
     },
     {
       "id": "M15",
-      "name": "",
+      "name": "翻书绘本体",
       "series": "M",
-      "category": "其他特别的风格",
-      "description": "",
-      "fit": "",
+      "category": "结构和镜头类（用来把不同风格串起来）",
+      "description": "一本打开的书，左右两页一幅画，翻页带着纸张弯曲和阴影。",
+      "fit": "讲故事、童书科普、“一页一页慢慢说”的叙事。",
       "tags": [],
       "file": "assets/library/风格提示词/M_动态风格/M15_.md",
       "image": ""
     },
     {
       "id": "M16",
-      "name": "",
+      "name": "双人对话体",
       "series": "M",
-      "category": "其他特别的风格",
-      "description": "",
-      "fit": "",
+      "category": "讲解类",
+      "description": "两个人分立画面两侧，谁说话谁动、谁出气泡，另一个人安静听。",
+      "fit": "讲清一个概念、模拟一次问答或争论、访谈对谈。",
       "tags": [],
       "file": "assets/library/风格提示词/M_动态风格/M16_.md",
       "image": ""
     },
     {
       "id": "M17",
-      "name": "",
+      "name": "预告片式快剪",
       "series": "M",
-      "category": "其他特别的风格",
-      "description": "",
-      "fit": "",
+      "category": "节奏和快剪类",
+      "description": "黑场字卡加大字砸屏，每一刀切在重拍上，字号和速度把情绪顶上去。",
+      "fit": "片头预告、活动宣传、发布前的悬念片。",
       "tags": [],
       "file": "assets/library/风格提示词/M_动态风格/M17_.md",
       "image": ""
     },
     {
       "id": "M26",
-      "name": "",
+      "name": "声音驱动画面",
       "series": "M",
-      "category": "其他特别的风格",
-      "description": "",
-      "fit": "",
+      "category": "节奏和快剪类",
+      "description": "画面完全跟着声音走：波形和频谱随音量起伏，重音给冲击圈，安静处收缩。",
+      "fit": "声音先行的短片、氛围片头、纯音乐/环境音配画面。",
       "tags": [],
       "file": "assets/library/风格提示词/M_动态风格/M26_.md",
       "image": ""
     },
     {
       "id": "M35",
-      "name": "",
+      "name": "数据可视化动效",
       "series": "M",
-      "category": "其他特别的风格",
-      "description": "",
-      "fit": "",
+      "category": "讲解类",
+      "description": "数字滚动、柱状/环形/折线依次长出来，每张图配一行结论。",
+      "fit": "数据报告、年度总结、“用一张图讲清楚”的科普。",
       "tags": [],
       "file": "assets/library/风格提示词/M_动态风格/M35_.md",
       "image": ""
     },
     {
       "id": "M39",
-      "name": "",
+      "name": "戏剧舞台体",
       "series": "M",
-      "category": "其他特别的风格",
-      "description": "",
-      "fit": "",
+      "category": "情绪和氛围类（感受线最常用）",
+      "description": "幕布开合收尾，追光跟着主角走，配角在暗处，动作有亮相和定格。",
+      "fit": "戏剧化的故事、寓言、“演给你看”的表达。",
       "tags": [],
       "file": "assets/library/风格提示词/M_动态风格/M39_.md",
       "image": ""
     },
     {
       "id": "M40",
-      "name": "",
+      "name": "产品开箱展示",
       "series": "M",
-      "category": "其他特别的风格",
-      "description": "",
-      "fit": "",
+      "category": "讲解类",
+      "description": "整体亮相后拆解分层，零件分开标注卖点再合回，光扫过机身。",
+      "fit": "产品介绍、功能卖点、开箱和评测视频。",
       "tags": [],
       "file": "assets/library/风格提示词/M_动态风格/M40_.md",
       "image": ""
@@ -926,7 +926,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K4_极简线条小人.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K4_极简线条小人.jpg"
+      "image": ""
     },
     {
       "id": "K5",
@@ -937,7 +937,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K5_孟菲斯扁平人.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K5_孟菲斯扁平人.jpg"
+      "image": ""
     },
     {
       "id": "K6",
@@ -948,7 +948,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K6_清线漫画.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K6_清线漫画.jpg"
+      "image": ""
     },
     {
       "id": "K7",
@@ -959,7 +959,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K7_日式动画.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K7_日式动画.jpg"
+      "image": ""
     },
     {
       "id": "K8",
@@ -970,7 +970,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K8_绘本.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K8_绘本.jpg"
+      "image": ""
     },
     {
       "id": "K9",
@@ -981,7 +981,7 @@
       "fit": "讲\"以前的我\"、自嘲",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K9_涂鸦.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K9_涂鸦.jpg"
+      "image": ""
     },
     {
       "id": "K10",
@@ -992,7 +992,7 @@
       "fit": "讲道理、科普",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K10_粉笔黑板.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K10_粉笔黑板.jpg"
+      "image": ""
     },
     {
       "id": "K11",
@@ -1003,7 +1003,7 @@
       "fit": "列方法、列步骤",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K11_手账笔记.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K11_手账笔记.jpg"
+      "image": ""
     },
     {
       "id": "K12",
@@ -1014,7 +1014,7 @@
       "fit": "轻松的小段子",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K12_报纸四格.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K12_报纸四格.jpg"
+      "image": ""
     },
     {
       "id": "K13",
@@ -1025,7 +1025,7 @@
       "fit": "讲\"卖课的人\"这种带点讽刺的段落",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K13_美漫网点.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K13_美漫网点.jpg"
+      "image": ""
     },
     {
       "id": "K14",
@@ -1036,7 +1036,7 @@
       "fit": "抓眼球的转折",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K14_波普.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K14_波普.jpg"
+      "image": ""
     },
     {
       "id": "K15",
@@ -1047,7 +1047,7 @@
       "fit": "复古、好玩",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K15_橡皮管 1930.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K15_橡皮管 1930.jpg"
+      "image": ""
     },
     {
       "id": "K16",
@@ -1058,7 +1058,7 @@
       "fit": "有设计感的讲解",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K16_中世纪现代.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K16_中世纪现代.jpg"
+      "image": ""
     },
     {
       "id": "K17",
@@ -1069,7 +1069,7 @@
       "fit": "讲结构、讲系统",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K17_几何.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K17_几何.jpg"
+      "image": ""
     },
     {
       "id": "K18",
@@ -1080,7 +1080,7 @@
       "fit": "讲情绪、讲回忆",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K18_水彩.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K18_水彩.jpg"
+      "image": ""
     },
     {
       "id": "K19",
@@ -1091,7 +1091,7 @@
       "fit": "情绪高的画面",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K19_厚涂.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K19_厚涂.jpg"
+      "image": ""
     },
     {
       "id": "K20",
@@ -1102,7 +1102,7 @@
       "fit": "讲故事",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K20_剪纸.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K20_剪纸.jpg"
+      "image": ""
     },
     {
       "id": "K21",
@@ -1113,7 +1113,7 @@
       "fit": "温暖的科普",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K21_手工纸艺.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K21_手工纸艺.jpg"
+      "image": ""
     },
     {
       "id": "K22",
@@ -1124,7 +1124,7 @@
       "fit": "讲变化、讲\"折叠\"",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K22_折纸.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K22_折纸.jpg"
+      "image": ""
     },
     {
       "id": "K23",
@@ -1135,7 +1135,7 @@
       "fit": "讲很多东西混在一起的段落",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K23_拼贴.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K23_拼贴.jpg"
+      "image": ""
     },
     {
       "id": "K24",
@@ -1146,7 +1146,7 @@
       "fit": "轻松好玩",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K24_粘土.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K24_粘土.jpg"
+      "image": ""
     },
     {
       "id": "K25",
@@ -1157,7 +1157,7 @@
       "fit": "角色高光时刻",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K25_皮克斯式 3D.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K25_皮克斯式 3D.jpg"
+      "image": ""
     },
     {
       "id": "K26",
@@ -1168,7 +1168,7 @@
       "fit": "想要 3D 但要卡通感",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K26_卡通渲染 3D.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K26_卡通渲染 3D.jpg"
+      "image": ""
     },
     {
       "id": "K27",
@@ -1179,7 +1179,7 @@
       "fit": "科技感",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K27_低多边形.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K27_低多边形.jpg"
+      "image": ""
     },
     {
       "id": "K28",
@@ -1190,7 +1190,7 @@
       "fit": "游戏感、复古",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K28_像素.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K28_像素.jpg"
+      "image": ""
     },
     {
       "id": "K29",
@@ -1201,7 +1201,7 @@
       "fit": "讲工具的结构",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K29_蓝图.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K29_蓝图.jpg"
+      "image": ""
     },
     {
       "id": "K30",
@@ -1212,7 +1212,7 @@
       "fit": "讲步骤",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K30_说明书线稿.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K30_说明书线稿.jpg"
+      "image": ""
     },
     {
       "id": "K31",
@@ -1223,7 +1223,7 @@
       "fit": "展示\"我的工具箱\"",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K31_平铺整理.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K31_平铺整理.jpg"
+      "image": ""
     },
     {
       "id": "K32",
@@ -1234,7 +1234,7 @@
       "fit": "讲\"一块块搭起来的系统\"",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K32_积木.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K32_积木.jpg"
+      "image": ""
     },
     {
       "id": "K33",
@@ -1245,7 +1245,7 @@
       "fit": "讲流程、讲路线",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K33_地铁图.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K33_地铁图.jpg"
+      "image": ""
     },
     {
       "id": "K34",
@@ -1256,7 +1256,7 @@
       "fit": "讲未来",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K34_赛博霓虹.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K34_赛博霓虹.jpg"
+      "image": ""
     },
     {
       "id": "K35",
@@ -1267,7 +1267,7 @@
       "fit": "讲历史",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K35_旧学院风.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K35_旧学院风.jpg"
+      "image": ""
     },
     {
       "id": "K36",
@@ -1278,7 +1278,7 @@
       "fit": "有设计感的海报画面",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K36_丝网印刷.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K36_丝网印刷.jpg"
+      "image": ""
     },
     {
       "id": "K37",
@@ -1289,7 +1289,7 @@
       "fit": "讲恐惧、讲黑暗面",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K37_哥特.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K37_哥特.jpg"
+      "image": ""
     },
     {
       "id": "K38",
@@ -1300,7 +1300,7 @@
       "fit": "生活小场景",
       "tags": [],
       "file": "assets/library/风格提示词/K_卡通画风/K38_情景喜剧.md",
-      "image": "assets/library/风格提示词/K_卡通画风/K38_情景喜剧.jpg"
+      "image": ""
     },
     {
       "id": "Z1",
@@ -1487,7 +1487,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H2_BlockFrame.md",
-      "image": "assets/library/风格提示词/H_现成版式/H2_BlockFrame.jpg"
+      "image": ""
     },
     {
       "id": "H3",
@@ -1498,7 +1498,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H3_Blue Professional.md",
-      "image": "assets/library/风格提示词/H_现成版式/H3_Blue Professional.jpg"
+      "image": ""
     },
     {
       "id": "H4",
@@ -1509,7 +1509,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H4_Bold Poster.md",
-      "image": "assets/library/风格提示词/H_现成版式/H4_Bold Poster.jpg"
+      "image": ""
     },
     {
       "id": "H5",
@@ -1520,7 +1520,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H5_Broadside.md",
-      "image": "assets/library/风格提示词/H_现成版式/H5_Broadside.jpg"
+      "image": ""
     },
     {
       "id": "H6",
@@ -1531,7 +1531,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H6_Capsule.md",
-      "image": "assets/library/风格提示词/H_现成版式/H6_Capsule.jpg"
+      "image": ""
     },
     {
       "id": "H7",
@@ -1542,7 +1542,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H7_Cartesian.md",
-      "image": "assets/library/风格提示词/H_现成版式/H7_Cartesian.jpg"
+      "image": ""
     },
     {
       "id": "H8",
@@ -1553,7 +1553,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H8_Cobalt Grid.md",
-      "image": "assets/library/风格提示词/H_现成版式/H8_Cobalt Grid.jpg"
+      "image": ""
     },
     {
       "id": "H9",
@@ -1564,7 +1564,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H9_Coral.md",
-      "image": "assets/library/风格提示词/H_现成版式/H9_Coral.jpg"
+      "image": ""
     },
     {
       "id": "H10",
@@ -1575,7 +1575,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H10_Creative Mode.md",
-      "image": "assets/library/风格提示词/H_现成版式/H10_Creative Mode.jpg"
+      "image": ""
     },
     {
       "id": "H11",
@@ -1586,7 +1586,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H11_Daisy Days.md",
-      "image": "assets/library/风格提示词/H_现成版式/H11_Daisy Days.jpg"
+      "image": ""
     },
     {
       "id": "H12",
@@ -1597,7 +1597,7 @@
       "fit": "",
       "tags": [],
       "file": "assets/library/风格提示词/H_现成版式/H12_Editorial Forest.md",
-      "image": "assets/library/风格提示词/H_现成版式/H12_Editorial Forest.jpg"
+      "image": ""
     },
     {
       "id": "L1",

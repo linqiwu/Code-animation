@@ -1,590 +1,698 @@
 {
- "schema_version": 1,
- "baseline_commit": "69ccbeaf0b821591a40936572c2f559d8f4cfb68",
- "contributions": {
-  "pr-1": {
-   "author": "Strange Leo (@strangeyu911-tech)",
-   "url": "https://github.com/XiaoyeCodes/code-animation-prompts/pull/1",
-   "commit": "b8e54537a39154126d5be43c3dd43c2b02d4fc61",
-   "description": "K1/K2/K3 社区补充参考说明卡；作者说明由 SVG 渲染，提交只包含 JPEG，未提供 SVG 源文件。"
+  "schema_version": 1,
+  "baseline_commit": "69ccbeaf0b821591a40936572c2f559d8f4cfb68",
+  "contributions": {
+    "pr-1": {
+      "author": "Strange Leo (@strangeyu911-tech)",
+      "url": "https://github.com/XiaoyeCodes/code-animation-prompts/pull/1",
+      "commit": "b8e54537a39154126d5be43c3dd43c2b02d4fc61",
+      "description": "K1/K2/K3 社区补充参考说明卡；作者说明由 SVG 渲染，提交只包含 JPEG，未提供 SVG 源文件。"
+    },
+    "local-h-examples": {
+      "author": "本地用户请求（OpenClaw 会话 2026-11-23）",
+      "description": "应用户要求，为 H_现成版式 12 条按 A-G_代码样片格式补充参考实现示例代码（S.H1–S.H12 绘制函数），仅在各条 .md 末尾追加“参考实现”段落，原有提示词内容不变。"
+    },
+    "local-k-examples": {
+      "author": "本地用户请求（OpenClaw 会话 2026-11-23）",
+      "description": "应用户要求，为 K_卡通画风 38 条按 A-G_代码样片格式补充参考实现示例代码（S.K1–S.K38 绘制函数），仅在各条 .md 末尾追加“参考实现”段落，原有提示词内容不变。"
+    },
+    "local-mz-examples": {
+      "author": "本地用户请求（OpenClaw 会话 2026-11-24）",
+      "description": "按 A-G/K/H .md 惯例为 M/Z 系列 47 条补充参考实现（S.M1–S.M13、S.M18–S.M25、S.M27–S.M34、S.M36–S.M38、S.Z1–S.Z15），仅在各条 .md 文末追加代码块并打包进 参考实现.js；提示词原文未动。"
+    },
+    "local-picker-fix": {
+      "author": "本地用户请求（OpenClaw 会话 2026-11-24）",
+      "description": "修复动态预览：参考实现.js 补 SERIF/PARENT 缺失常量（A1/A2/A4/A5/B5/C1/F3 报错黑屏）；风格挑选.html 打开灯箱时重置 animT0、播放前复位画布状态（textAlign 等），避免跨预览串状态。"
+    },
+    "local-m-fill": {
+      "author": "本地用户请求（OpenClaw 会话 2026-11-24）",
+      "description": "填写 M14–M17、M26、M35、M39、M40 八条空占位：标题、元数据、风格提示词与参考实现均由本地补写。"
+    }
   },
-  "local-h-examples": {
-   "author": "本地用户请求（OpenClaw 会话 2026-11-23）",
-   "description": "应用户要求，为 H_现成版式 12 条按 A-G_代码样片格式补充参考实现示例代码（S.H1–S.H12 绘制函数），仅在各条 .md 末尾追加“参考实现”段落，原有提示词内容不变。"
+  "modified": {
+    "_统计.json": {
+      "original_sha256": "8902bdf277a34c7722b01e5bb066dd7439ca08617e1f230804d6d02a08cea973",
+      "sha256": "2136719bfbb16b2c3f1ad122b1ebf9fca215497da468786e1a604a7e9191085e",
+      "contribution": "pr-1",
+      "reason": "将当前静帧数从 193 更新为 196。"
+    },
+    "风格挑选.html": {
+      "original_sha256": "2175fec5e551814947fad965866747ec0527dd62bb4730bf2fc4fec7360e8490",
+      "sha256": "f8f614d35c7b65fd0525af793515af07e220d976dec0bef0ffa26c33ca91b19a",
+      "contribution": "local-picker-fix",
+      "reason": "含 pr-1 的 K1–K3 参考图路径补充；本地追加：引入 参考实现.js，点开有参考实现的风格时灯箱循环播放动态预览；2026-11-24：openLb 时重置 animT0、播放前复位画布状态，并补齐 M14 等 8 条词条字段。"
+    },
+    "风格提示词/H_现成版式/H10_Creative Mode.md": {
+      "original_sha256": "b940fc55f995be713ca10672c04d8ac74248ba9e47f716dfce0efadac4d6c68f",
+      "sha256": "807a285d267b1fb5fbd41a44c76e55649576616ebbf0a76d4189465a48afc168",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H11_Daisy Days.md": {
+      "original_sha256": "1eb37a3330e3632ca92bdca3e4160fdedd1126c3a4f5e57c049004ea40d21fac",
+      "sha256": "3b2673c4cea4ea95e38c35b88ea8679fd93d5c7591b90e0e772a7e8a6fc57993",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H12_Editorial Forest.md": {
+      "original_sha256": "69e0a8ca40a52e2fdf866f1f6cef05d96ddacc6ca61bd343c13cadf63a34ee69",
+      "sha256": "81a7d24e39b368f055dad95197f3091d23f78b620d8ff54e9f60f6195f729b65",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H1_Biennale Yellow.md": {
+      "original_sha256": "bd3ebd66119b3e324bda4e689aa4e2c1b6cf33151488c8613cae688416aa681a",
+      "sha256": "ec8d2be1453aadd39df723f5365c22c8509e10381672991e5fe40c1867301e6b",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H2_BlockFrame.md": {
+      "original_sha256": "6f012dcf1094105a85f69e96e05705188aebadb6fc2da379a57c7480e958ef05",
+      "sha256": "d23c2cf9dd78b32da7bc8c59dde40d5c557d38c78e0f6d8f6795734d958b58a7",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H3_Blue Professional.md": {
+      "original_sha256": "dd957f36b685c7996c4b6031164323e08b1356d942c462ada207511f5bfe1273",
+      "sha256": "4261eff10f8ad8d01aef2213b83ed0025f5ac2bd381362e9c9e1266cb4a7ccb0",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H4_Bold Poster.md": {
+      "original_sha256": "fcdf275ba727ad58726f7fdc4eeb30a27f546e03c638e9e0e976a470e8f56dc6",
+      "sha256": "782cbfb5ba6f3132531eff3e6f1c6f9bf999c89531a2d3e0fdd09b4d08bc553a",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H5_Broadside.md": {
+      "original_sha256": "40846c4a0b2e2fdc2ec0d0d391b35c29c3cce16a7a46fc2d7e5e7dc92c6154ff",
+      "sha256": "f684c49b14f0cc17ff7db3db2bb2f136ba693f057d52792784363b2a2bb91f15",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H6_Capsule.md": {
+      "original_sha256": "3e1419146c4dc96706efccf73e6cb371d0fee8b613ddbd9ac7e5b4a899791189",
+      "sha256": "2dafb74ab43f7915e5761e4ac64aebee05a8f935cb1ae97e2b3692a812e692e9",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H7_Cartesian.md": {
+      "original_sha256": "9cbc4b078b66b93e9de5ae187bb4538d44d6b4e88cda4c495c904489ee8f11ae",
+      "sha256": "451a9fb9c3e6bbbaef311b2e5cb75ef229016cdefeb5388f079a531967400160",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H8_Cobalt Grid.md": {
+      "original_sha256": "3608a80b5e7892aea8cb6e01c5adbe50ba55c4a1e523d560d3df50ee1d5c481e",
+      "sha256": "351a7995e90a9d44cbe30f73671455cfa93ab11d97ecfdaa0ff42d2cfee2bef0",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/H_现成版式/H9_Coral.md": {
+      "original_sha256": "65bb45d82b8a427eef14783366179a7f782136ffc7f10471ad424aec91892cab",
+      "sha256": "d1104d2f66d0f58baca88ea69161bc399269f12ae6b438b6e395aeeb9a8572e3",
+      "contribution": "local-h-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K10_粉笔黑板.md": {
+      "original_sha256": "e96fc017c7e442fb22589ec55f36784b65e23f48fff7e4f2d65c2a51fa9d8e3d",
+      "sha256": "8bc220c0368c1bd34becb9ffc080c8f3f8d879b0638d2ee6ff50556d7e5783d1",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K11_手账笔记.md": {
+      "original_sha256": "333203dbc28be3e4ecab636f1ea40e4eed736acb8d3de9bb62093af590437007",
+      "sha256": "74e28fe1058ad9f79441cc9fda6b2c3811372540235b2029d71add170ef46886",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K12_报纸四格.md": {
+      "original_sha256": "f53e0bb79915a1a4211d55b8818e656d371a3977144d39b56ee66e05a2662b76",
+      "sha256": "5ef6a536793d28a94f2a4b5bc561c47f44d7afb656f3297ad99c032a60363883",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K13_美漫网点.md": {
+      "original_sha256": "f7496551e0cd62ea5da08f1a8acc3dd83e7ede4e1554b474b4caf942e0bd613b",
+      "sha256": "22004e937cc428d58e766743b5d1e18808ec8f06ae557ca282664de73f22f526",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K14_波普.md": {
+      "original_sha256": "f1a3c457da564ec82241313706c5f09387243e6f57c885426e9a6326d3fd2567",
+      "sha256": "ea3967a5d9e0c95518dc4d275eae9a766b64b9f84886bace2a2258e48b9a5cb7",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K15_橡皮管 1930.md": {
+      "original_sha256": "3e369d68c0af2ca1764c66567c557f44ba4a2c492c21449cd48575068d66169d",
+      "sha256": "c65b3f610974a90fb4fed9c3a497c0b2ee854b2f2cec2cb89e1fbf0cffbf0fcc",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K16_中世纪现代.md": {
+      "original_sha256": "7e23ddba46c7f801be6e8fc26b4b73460c5dea6ff63a1638b0a6b05b3b57a118",
+      "sha256": "78a31e9b4b9d3478a6a9e688891b8860ddd43e3db1761dd726fc4504214abc04",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K17_几何.md": {
+      "original_sha256": "11eefa798c11288e59f94008e68c82543bae7ef2904d96bd9f6e0028271256e3",
+      "sha256": "59bfa27500335693b9e531696970d003cd0ff6c5939a30bb8196e8cf2e42e196",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K18_水彩.md": {
+      "original_sha256": "d137987a34cc918a4a8fcaf92f91bd2f1764a728ca0cc7555d920b32d57a56c7",
+      "sha256": "5e1a21fbcf4fa3f19c355dec9621ae7c0c604b707ae0ffbecf830632f5c2ede6",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K19_厚涂.md": {
+      "original_sha256": "9fc0bdbccae55aae6b05d51e62870ab749edcecd707cc69161166f505cc641db",
+      "sha256": "6b147d0b5a1db9ed6c56e48735a47e7e816a26ca20babe520607af15acef50ee",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K1_扁平矢量.md": {
+      "original_sha256": "2008666adc1b07b5bbfa2a9bb10b547336a30bab83c27b2b2bd37637b98b02b2",
+      "sha256": "74416dc0b542f96610b59354d3a3574316c6c511b6964dcff0375f5f60378b36",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K20_剪纸.md": {
+      "original_sha256": "209e814ede6b8086bb6149c329ca82635ca8e5e9b9d4997befe4d6c79f99380c",
+      "sha256": "3a741a497ec545c24389ae7c4ba14f19010c501fef1e2201d02597c471828301",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K21_手工纸艺.md": {
+      "original_sha256": "f73148119922eaaea87e657ae6c58d2819478232a8fef410e933f89bbe0bbe3e",
+      "sha256": "aabf0645281a864c5b50f2ea433f398bb566b4b35670ec1b2cf4ae354e450d65",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K22_折纸.md": {
+      "original_sha256": "1ba1a3134e6bb316d3debb1b589299053b716633127b07b5391846789ac56752",
+      "sha256": "81b26e7ce69389a7f142ff31c2fd6bb3b2c070d07763e33d7a58c07b35af67dc",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K23_拼贴.md": {
+      "original_sha256": "be2538c569c48da014e4c70b9fafad60f2e9f6ccaeaa4d32b11ac83873bb6edd",
+      "sha256": "151393b5ae1e1b94316a089363111ade10b216ae31fe1552b1bb3826bd5793b7",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K24_粘土.md": {
+      "original_sha256": "e239494d143d9182eeddae864d5c53cab5be1b097b1d62005092cd2828deff7b",
+      "sha256": "1bafa3c2a0b822803864eede952223f5c0a190d4c5c4eeb4600ab216ebcf1517",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K25_皮克斯式 3D.md": {
+      "original_sha256": "878177de06a731dadb4c16f5fdc304dd9a8ede0eb31598f096339f08c16a6031",
+      "sha256": "9e64cad4c7743e5885f0a63a3c294d0968f5fbd0c704ce79d7a0896365b74377",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K26_卡通渲染 3D.md": {
+      "original_sha256": "648cb0a0fce91ee5bafb80a72ac024fc50b027ec3f9bdf381ffe91dc8b45b66d",
+      "sha256": "546387d5f3d64a141ff0211f935a22bd7f565ba66e189f810d83e7204f83bc5d",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K27_低多边形.md": {
+      "original_sha256": "20ae86d4037c8d0da97184c2dc6e7f43f464c2ed8b114ceb1a4b1449a8f9b7f3",
+      "sha256": "f86fe1062a27abeed561adfb2166b5739e682377da554b78e73ea16aff53b8d5",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K28_像素.md": {
+      "original_sha256": "da346f43b0af0b5cf138301b5b157386c78726aafeb0a8dae35b793cf304d476",
+      "sha256": "32d6ffcc037132da8bad44a05aafa4b5e2f1b79ccb4dc315f911a45a8429be92",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K29_蓝图.md": {
+      "original_sha256": "3c5ee24f5ee12d70a50769af6d7f20f51f97a6984c64aa6ce4acdf5249e79361",
+      "sha256": "a2bf07ecb80fb9fe6eb453c2cb4c8c060f30fb7f1b0eaddaba522078633c64ed",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K2_Q 版.md": {
+      "original_sha256": "cce91700945f679f58d9086d032f2a22e90fc055bcae64868dccfc03818b1077",
+      "sha256": "cf5a9d09f8f5fd4821fe819f66b59537930c8a839c4156f59bda44425157e847",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K30_说明书线稿.md": {
+      "original_sha256": "b11627fe9c965bc8d7389e8ccbe48181c05dbec8bbd0b17ac9725a433e410dce",
+      "sha256": "bf78a9f33d936e6edaee47de43f2dc516ef9b158d69955b2408267e582b6a84d",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K31_平铺整理.md": {
+      "original_sha256": "420e0cba69c14e5e77a086ba3242aa0957986ebfb717e2aff2d41d5ae8fa5ba7",
+      "sha256": "9e0e7bc93a2dddf6d899760600dfa4584fa06224bc6b665cf4313a96bbb11386",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K32_积木.md": {
+      "original_sha256": "f63f5c1aaade5b03ba834601fd7bdd078b5adb864346a6eaf25c03279fb30d8c",
+      "sha256": "3dadcc0ce1ef35344aa748e1c52d7fa24589b7e164ba7ae01fef01295d7934c6",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K33_地铁图.md": {
+      "original_sha256": "918503601ab096adef79f16ecf90e248fbd7879c2a0f23f3361ce3c727a6a180",
+      "sha256": "7c34e51545c89091858fedd067e16c076c3b694e4094f98e5fab89193c238600",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K34_赛博霓虹.md": {
+      "original_sha256": "d71030493afd31fbe7f7a34bf979657c2e49e77baf899cb79b7e7ffde7d0f422",
+      "sha256": "342ee5f131b9fcab03246b92f783fec6bb9237331dc4849feb8cde7e76c8dbae",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K35_旧学院风.md": {
+      "original_sha256": "ff29d584bda9ec23cf9c3411ae768d2e04d5391f6002cd949e82419a445db5f5",
+      "sha256": "f539ba58c05ee55df6d5861d9191df092844c557efd641f78dff6e5f66a74a7f",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K36_丝网印刷.md": {
+      "original_sha256": "ba21393874cd9c42b3952c65a5f13512eb423bb26ce643f47c4bf7803b74c9df",
+      "sha256": "59506dddf5c05d83f17eed41fd1c42538fa7776e81c32098994f72372183b57d",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K37_哥特.md": {
+      "original_sha256": "9ca50c96450ff6c0622b967cb7d96bf77b46ae85a49d8f8a6940a31d6c52a7de",
+      "sha256": "848137fc765016096f17df64e3396b6bda655d768a870effffdcd2d71a7e33cf",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K38_情景喜剧.md": {
+      "original_sha256": "80fe39c35a4a926e7a3a12ad70cff6d54d4a5ca1a6487cfb3e63a3579e384a90",
+      "sha256": "58f995eea12ac675de09801881ee4f2e6e0653635161fdac770de374955e1e09",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K3_卡哇伊.md": {
+      "original_sha256": "a1c83c0b408ff224ddef6af703b7c00651a0a3756824593d8cba83161013bc1d",
+      "sha256": "8b163be51fbe54e85d1a6c14e1329b22f63c56b6ebc943c5e6943960f3dc7f9a",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K4_极简线条小人.md": {
+      "original_sha256": "e5c6ad571f54186dd79cebf6553516ffb1c425d90850340abec9b960426e81e3",
+      "sha256": "a6e72ff5a4d7eafc9276eaa6ede962f1dc55313d025d0779e267a47b17dc2cd8",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K5_孟菲斯扁平人.md": {
+      "original_sha256": "95d8d589c1493067c94ec3aab5ab65def00520a140f77dc0af2ac640c0429614",
+      "sha256": "3994866e5d0400ff5bd79b6e04efe92357bc24d0ce1bd89dbdba761ab1a713d1",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K6_清线漫画.md": {
+      "original_sha256": "1ab896e3782dddd570b4244c263c4fba7ed675efb20f699d1150fecf20fab630",
+      "sha256": "5400721333cc65e8e7ed857e2cc42da30df1a33426aa3f3dc192f32f1da6ceb4",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K7_日式动画.md": {
+      "original_sha256": "766225c683dc0e257fbf1f5877e51deac7e924e0ee10383a8fb290347bf0d8f6",
+      "sha256": "83b66e3916f35c8f8292b526d1c1642f600ae3450b8d5f44216fcd396c84367f",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K8_绘本.md": {
+      "original_sha256": "10e85f963757d55d4938976cf4e64f7686021f2066699b59640313d48681d6c4",
+      "sha256": "55c0da3ff4099f5849bb91e38f656f0ef28583b5cff26cbbeb422fb0e371ae62",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/K_卡通画风/K9_涂鸦.md": {
+      "original_sha256": "112fcca15eb45a3d20894fba7e1de8706201cac9a2a3d29eda2cb3fc5c1570fd",
+      "sha256": "d33409e265e9f908eb83759bfc5938c9daa3984ae2a8db0d07b18571ca7a9e1f",
+      "contribution": "local-k-examples",
+      "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
+    },
+    "风格提示词/M_动态风格/M10_把一个抽象概念、一种情绪做成画面.md": {
+      "original_sha256": "e201fd11f02310ab0667e7e9a873ac24c85782222b8cad4a036220d83277c752",
+      "sha256": "4c6b6829e34859bcc577b34ecc2092cda46bfb7c941f25339540b2cae215d784",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M10 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M11_人生循环.md": {
+      "original_sha256": "e5cb6eb6ab057faadaadbd98c095bd237465ef88aca0b4b265b2e50c80b55c85",
+      "sha256": "11579db98846f7a69ba6442045da90482bc2903505380e8c169dcb74e17eadf7",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M11 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M12_剪纸皮影.md": {
+      "original_sha256": "806c3befe21dde1d0b90478eeaf94b234368d55ceb9b5e59f5fbac0309dfdc6d",
+      "sha256": "85d7a24ee473535522871da9433595408704eb69e7ea2c5671ea7f74ed5ba72c",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M12 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M13_手绘定格，第一人称.md": {
+      "original_sha256": "d6e8df592b7e940bd6f274260f6634169966dc5a08fb1d46a631dc049bc18786",
+      "sha256": "569b8cb11a228ebb7f614b8e636bd84dcb4d3443560bc1d4efcc939738e46024",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M13 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M14_.md": {
+      "original_sha256": "e71eb3448388320d9a3810e1104fee7503e88f463f16ade994bec2addd1efa22",
+      "sha256": "9926b513d9a310842b49e7d62e8fb1a1e5c4d381155cb405c484240748dab0ab",
+      "contribution": "local-m-fill",
+      "reason": "填写空占位：标题、元数据与风格提示词由本地补写，并附参考实现 S.M14。"
+    },
+    "风格提示词/M_动态风格/M15_.md": {
+      "original_sha256": "db5303979c4bc15fc996f195fb2c530450d365264c3d00749ed4924858a54168",
+      "sha256": "f04c3a186d65b48f179d8e393a37c447f6e3c52645856c39d99f8d65fe7fb034",
+      "contribution": "local-m-fill",
+      "reason": "填写空占位：标题、元数据与风格提示词由本地补写，并附参考实现 S.M15。"
+    },
+    "风格提示词/M_动态风格/M16_.md": {
+      "original_sha256": "59c8763fbbd8b614d9f18a3a85102fe1f14bb5e58b7b21c47b66f29b5cd5de39",
+      "sha256": "0c1042fd7ceaf9248d020f7c8c810325f0d795db6b3939909937262b926bd41f",
+      "contribution": "local-m-fill",
+      "reason": "填写空占位：标题、元数据与风格提示词由本地补写，并附参考实现 S.M16。"
+    },
+    "风格提示词/M_动态风格/M17_.md": {
+      "original_sha256": "6d0c06e7dd4f809597f7f6fabc99133ae05223e1204ebe5e9a31aaf521133eff",
+      "sha256": "98b5b4102a3412b8782410886d23b7987052df5e45df8bb397ceb7d3489f471c",
+      "contribution": "local-m-fill",
+      "reason": "填写空占位：标题、元数据与风格提示词由本地补写，并附参考实现 S.M17。"
+    },
+    "风格提示词/M_动态风格/M18_数学·科学讲解（3Blue1Brown 那种）.md": {
+      "original_sha256": "daed0e04e775d366d8420c0d9dc5419f48904cf0c507d44086c593e1c6034561",
+      "sha256": "b577c615d04caf85d53e805db6b47f54955d569cf8652398aedc39f8f94cf69c",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M18 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M19_零基础科普.md": {
+      "original_sha256": "fb9bcb3db13e77a857e22cb2f3815d4710dd8da4292d95cdb0336ebee5a30b20",
+      "sha256": "4a60e02f02097ce498b79f9194d938d5ddbf5a9812dd15b9e257bf38d2ab2abe",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M19 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M1_白板手绘讲解.md": {
+      "original_sha256": "9c3b9b8f54c5daa7e32d5d54d857880e5c05621a566e73a27d8db4063bfbe965",
+      "sha256": "b4b73fdfc9013f0987258197305d1aececef1f4b96649068222d685991b987d3",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M1 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M20_时间线·历史.md": {
+      "original_sha256": "b7351cf4eed4f197b1d8c52e82f97c322e2eed7e0debbf19b1ea3b0a0d16d3a0",
+      "sha256": "dad8d26aac0fea6a58121339264c7a90b361cd95481ebbd8bf14bd59602c8c28",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M20 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M21_原理拆解（它是怎么工作的）.md": {
+      "original_sha256": "c0ea294487eb7c35a1c4345807a0344e573e8f6771920e59ffac810952d9e78a",
+      "sha256": "97918daca5d4b4c8ca9b1035329b8387c75b1cff9756b6c1d0f320764e8c906d",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M21 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M22_配方式步骤.md": {
+      "original_sha256": "834f97b8b3cc81ddcedecb6c137fc5914bc69e146eb137dc5322adc5e65b6c77",
+      "sha256": "22ac692cc859db3930fc4f8e391c64619e99d4a9e63c547e6254cc9e6664ecff",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M22 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M23_五幕讲解（万能讲解模板）.md": {
+      "original_sha256": "b64e0a077c12b8e0f41c7110cc8161a6484251972c5656634b4ec346691a9ea2",
+      "sha256": "7a18084286534dd63ddae4efd210ff8209d5ddd7c1909bcc18c858898bf656da",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M23 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M24_四段式发布片.md": {
+      "original_sha256": "e5ec737ef07d7b590ff82f2cea35a0310274ea8413f8f521e0c4bb324d20ccb7",
+      "sha256": "bb114f895b6082c329fadec2e01623cda3f3c237e9ae10ab453a8a51c8af3d09",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M24 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M25_歌词卡点.md": {
+      "original_sha256": "1a241c8929645d51fd1b9dc3761da5addf1671ad91dcc811083c5c0b43259db7",
+      "sha256": "f4b84f83b56618d3ec76b45ab43d5769292b73a2f3641947b5b6427371f45fb7",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M25 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M26_.md": {
+      "original_sha256": "9b1a38dbcb12edb2c6b11a3d0cb6185c465c658e4d02fd9185f6566bbad47142",
+      "sha256": "e05512105caf48354fd6b3dcfe00f60955270230994d2f79b08dabe2a84c4e84",
+      "contribution": "local-m-fill",
+      "reason": "填写空占位：标题、元数据与风格提示词由本地补写，并附参考实现 S.M26。"
+    },
+    "风格提示词/M_动态风格/M27_无对白短片，声音讲一半.md": {
+      "original_sha256": "db1ed34fd9461e6545520ee65ef55481703a32c5e7328cabf644cf22361c487b",
+      "sha256": "e089ec58f944fdfbf21fdaad3ad876489b5c2bc3b5059e1d6639757dcfa1d5ae",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M27 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M28_对称暖色的电影感空镜.md": {
+      "original_sha256": "c2c6b2203e936efd3c7c61f2f5d5698f2536fdaf6e8ec68a8520b0606fa15c75",
+      "sha256": "c79f7e54d00e54f386a0e97a9984db814a84be3b283d9f24ec6039baf3bcc1cc",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M28 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M29_日落天空的 3D 空镜加一句话.md": {
+      "original_sha256": "e48483cfeb3f351d4065d733c5190b1055e860f6cce46e5cceb72333e8b1348f",
+      "sha256": "ad71a88e394257ecd154dbc9a15d6d3668ebdac4e41d9e2f647a779cb79e893f",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M29 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M2_纸感手写笔记.md": {
+      "original_sha256": "9b678798cf2332a24ae6367ade6cf70bc46243f83e1a6000ac47a7f74f486ff0",
+      "sha256": "f83f18df22d345f13f99c61b9f94a4ebfb660b85f0ca630bed32a2f934804411",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M2 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M30_东方意境.md": {
+      "original_sha256": "720478be2e9342039ae2ed5707a42162a916b1dcf1a8e33a52541475ccfb4e37",
+      "sha256": "df7295ca825a01c59d0ae06f47e02b4ca29ba392520b9dbaa72c8d9a86bf2d3d",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M30 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M31_粘土定格 MV.md": {
+      "original_sha256": "968d6c57323a534db911595d46b02d81b68e070f11eb0f3ce60d602786b51844",
+      "sha256": "ca4de654add90908da0103c80b951b9d7268f75402dd9c256f3355544bc49ea5",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M31 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M32_竖屏快节奏 POV.md": {
+      "original_sha256": "d925fabe93d800eaf176cb81c64ba16d818fb3601a7290bcfc76874174795747",
+      "sha256": "7f7a31138fd27221e62d39ff0224a1b2edc30a1f7615ae3a377a2692ac988b72",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M32 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M33_从一个点拉远到宇宙.md": {
+      "original_sha256": "92019d4eeacb1de60449615866128e179cc47e525ccb557bfb1c6e95166c6e57",
+      "sha256": "23a8f5b669e6078a21bc0ac2248e163749a89ca5432f44755ef4f1969c7d11db",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M33 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M34_新闻快讯盘点.md": {
+      "original_sha256": "4de2d4e279d17a168425c21a098df055c61c3860c075581aed306a36af8cfaf8",
+      "sha256": "0383e6625b60ce6e2273cce391f412ba9e86180e20468ce129cd9b9295820ee0",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M34 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M35_.md": {
+      "original_sha256": "513695128e686b22156c521f7422b49feb5a178c74a1177a55a5ef05960a3f0b",
+      "sha256": "9dd03cf9af24de372069472e9d7bf94353a58e787d1379aec2bd91356fe1cce4",
+      "contribution": "local-m-fill",
+      "reason": "填写空占位：标题、元数据与风格提示词由本地补写，并附参考实现 S.M35。"
+    },
+    "风格提示词/M_动态风格/M36_破框.md": {
+      "original_sha256": "852dc384a0b10366b86787e89decd814c1fe5a61617670041e6f00b846c09e14",
+      "sha256": "c70f0d45ea7936d53a27d966bc88fbcec887c4335c576e8dc0923fd682eb00e2",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M36 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M37_Logo 慢慢拼出来（片头片尾）.md": {
+      "original_sha256": "75fc9e50f5820f10413da2e6aec22567e2d730babfe9fcbf2d203f86f4aad969",
+      "sha256": "a543602c927f0093083edb38868cce326d81b7fad7e65cafbfef8492f633893b",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M37 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M38_一个形状变到底.md": {
+      "original_sha256": "00190e03f389d7cda397381ced8de52b59b671aa72470087d0b75aee2ed36969",
+      "sha256": "795a75d05675f34e1e82f261dddc1706ecdbd1c2cbd1a1dae2300f53265e6d0b",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M38 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M39_.md": {
+      "original_sha256": "44b145629af79b2ed1f8166c77188d4c3a5224c368194c3a7da5ae71ccf6f242",
+      "sha256": "104a7d1ec2bc65cd956b7983d9b3ad127cc679cbc54524f29bec25adb545ab31",
+      "contribution": "local-m-fill",
+      "reason": "填写空占位：标题、元数据与风格提示词由本地补写，并附参考实现 S.M39。"
+    },
+    "风格提示词/M_动态风格/M3_文字建筑（口播金句专用）.md": {
+      "original_sha256": "138477fd3d04c7d04de7818f87affc23c8f51ac2177013931096f18c8f80b924",
+      "sha256": "4fcb66ae0bbfa807ecf4edd8258955cacbdd3946a6369ee015cbb9d739542121",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M3 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M40_.md": {
+      "original_sha256": "a051c6addc56a3a735dcede17015d553c5ab483ac4b5d05a3a0211c5da0d45f8",
+      "sha256": "358b44a7b5adcf71ca92dd3ba3aa59fdda878c099429454d5de5a9f81b57cdcb",
+      "contribution": "local-m-fill",
+      "reason": "填写空占位：标题、元数据与风格提示词由本地补写，并附参考实现 S.M40。"
+    },
+    "风格提示词/M_动态风格/M4_一个元素串全片.md": {
+      "original_sha256": "0cae463a6395ade013f41f3a1bd4023ae19a060d43dea359e1c77797f64899c7",
+      "sha256": "cec235d5c29c325e47fdf6d6a351f9a21f1fa4050b9175a877a2f53d3d158c4d",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M4 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M5_一镜到底.md": {
+      "original_sha256": "c6126639d5937e801888fcdffc223ed4e0d42da9d8b2fa322d09f742415a970d",
+      "sha256": "750ec2907defdf76cde5bd36ea1521f0b706f9ba865976cdae9b0ca295fb95a1",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M5 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M6_苹果发布会风.md": {
+      "original_sha256": "c7052b15d6a9f166bd7fa5d1bda9ce88eaa4993120df75d81f0a12f3930adb9f",
+      "sha256": "9f802aad293b99fbdca6ff415e47e634b168928e4bdbc159ddbf95e8c891cc6c",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M6 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M7_极简卡点.md": {
+      "original_sha256": "1e08c4505e7ab6a0240eae0e6b7ad2e2f7727f3f6e7f0811769b0171787645eb",
+      "sha256": "a815aa02c5f8cc54f750569aac7316559d4f0864c6bb1cbb6a9abe0de782ce08",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M7 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M8_口播 + 逐字字幕.md": {
+      "original_sha256": "8b63d18e6769a22f92becd5067d7024c8f13858e31f0d23b3007386a62eb89aa",
+      "sha256": "bf89a716e1d843c0ee8af565fc553b6caf4c2e369f124cfaa27579eb9fd5664f",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M8 的代码块；提示词原文未动。"
+    },
+    "风格提示词/M_动态风格/M9_情绪弧线：混乱、掌控、清晰.md": {
+      "original_sha256": "2d485778106e5388cc5e438f93f464a25ca9483417dbf2a60f5e6fc22a0915c2",
+      "sha256": "bf2c2053af24c393936dd2fdfa94f68fb2599c9ce035a780aadc31b252f20db4",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.M9 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z10_木版画.md": {
+      "original_sha256": "221c125b8450bff173ddf42d8a5db8d729bfe1324cd18602ffda98c3f9404773",
+      "sha256": "a908a85fef24a6a302419febed45dbb1c76901ea49c5b3b42e05294b139364d0",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z10 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z11_京剧脸谱.md": {
+      "original_sha256": "af489a9ba872a26adaf56d6dca0af0c6288e653ee9729af63997e4778a79e92d",
+      "sha256": "dce85eb7b397e3c234e3ab1da4777fdd0051f01b5989dc2a7e932a73f403fb60",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z11 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z12_书法.md": {
+      "original_sha256": "7ed601b7cd94bd8b12dc58b9e2818cf34a6bb7a98b5fdeaac54f6bdd5d1cccec",
+      "sha256": "fcac1e3057d1245f6e8ee214ad6f07131f90eefe469c1c0adeeb33929e776113",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z12 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z13_水墨漫画.md": {
+      "original_sha256": "aae45700b58b6e77d2bc7d17484bff3bb44dbbd733fabe0a4ae14296d38c3295",
+      "sha256": "ce8197793567da578083976dd565e4d892eca8328a1a6d5f76b26908585be5e7",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z13 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z14_彩铅手绘.md": {
+      "original_sha256": "69dca6c7841a0c605ff424e07316a58b14efdc5daf6899806844fcec7b388cd7",
+      "sha256": "de95124e6d4d1c181ebc7940a5cc79d432f80e1eb3d56623d4915c7bfb2a3c43",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z14 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z15_温暖水彩科普卡.md": {
+      "original_sha256": "66b88cd9007f087d5a77365f689463d3ef452189681092983ca01004e4903f77",
+      "sha256": "75283f7b586f9b59908404b126cbeac8d9b034d3b631fc518a63dd95fb0cdbf2",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z15 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z1_水墨.md": {
+      "original_sha256": "c68629e044322080de60c127a780e8d8a25b6abbcd0a235345520b77459831f1",
+      "sha256": "91130d36e3959ebab286c092ba64887d51bd14cdaf6d1c2da1878ec9b60b3c6e",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z1 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z2_工笔.md": {
+      "original_sha256": "b230995799a6728e6d7698b6a85f20ebdb024beecccd9349af7239bb972747b7",
+      "sha256": "8e96b12fc5945cb573fc6fda86614c7c3736d8e5a1cc1f01df4b916a83fb37f2",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z2 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z3_写意.md": {
+      "original_sha256": "483bf8ef8b2fddd169f0bdb14def8faf25f9e37945a7361b179493b3db5bfbb7",
+      "sha256": "d39680441c5870145f7bfda89f2fffa3444693a4d1daec24dea63ceb0148a27c",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z3 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z4_山水.md": {
+      "original_sha256": "015d2f1d4cd1216b248cae29dbbb755d86b82f127233b1e6a2c9d637c232633d",
+      "sha256": "c0b60d4f142c8b18e41afba21a43b7f11619c5908aee184743ce6685ca5212f3",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z4 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z5_剪纸.md": {
+      "original_sha256": "fc73b263bac6473bc07b0da40347ac38c53dd35cbde67fa2c1c84223211a6789",
+      "sha256": "cf3546f8875daa0ec18266fd52b115403a21cba601c49a337b62d26f1ba66667",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z5 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z6_年画.md": {
+      "original_sha256": "39d2a4aba74bb3abf1de792661e9157f17505d8db01cdd8a5750f6b437ba8a96",
+      "sha256": "1287e9849483e2ac5da66f5d68f0e45a6482ffc4a4ce9b9c380d0ad4337f95de",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z6 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z7_皮影.md": {
+      "original_sha256": "4337ed3d97133c9e5d133c3f1c16aeecb0c0472c71c4dbc70547a4ed5e36dd0d",
+      "sha256": "c098a8d90fe7e2387281ee31a718ca72881c8bd46a844ab1e1e0b25b83fab41d",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z7 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z8_敦煌.md": {
+      "original_sha256": "db482af36f29bbe820ac52066949a1e7804ab242a897f29b1d736da14a161eb9",
+      "sha256": "4ee462901e9d9bf1b0dfcda21eaa2136f4fb2e03b6cde7a180d8e29ba12fcb96",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z8 的代码块；提示词原文未动。"
+    },
+    "风格提示词/Z_中国风/Z9_青花.md": {
+      "original_sha256": "b12952febf66a08c0dc426097b8d312cd5e4411bc2375ee5933e1055cc919cd9",
+      "sha256": "17fd6c282fa2b79bd20e4d744d98d9d91edbe1700214abab508c30c393770f29",
+      "contribution": "local-mz-examples",
+      "reason": "按 A-G/K/H 惯例在文末补充参考实现 S.Z9 的代码块；提示词原文未动。"
+    }
   },
-  "local-k-examples": {
-   "author": "本地用户请求（OpenClaw 会话 2026-11-23）",
-   "description": "应用户要求，为 K_卡通画风 38 条按 A-G_代码样片格式补充参考实现示例代码（S.K1–S.K38 绘制函数），仅在各条 .md 末尾追加“参考实现”段落，原有提示词内容不变。"
-  },
-  "local-h-k-stills": {
-   "author": "本地用户请求（会话 2026-11-24）",
-   "description": "应用户要求，为 H_现成版式、K_卡通画风 中此前只有参考实现、没有静帧的条目，按 A-G_代码样片格式从参考实现渲染 1920×1080 JPG 预览图，并把路径登记进挑选器与索引。"
+  "added": {
+    "风格提示词/K_卡通画风/K1_扁平矢量.jpg": {
+      "sha256": "7ebf11524fdbc041d5e066eeac6256e6bce5764b1a6fccadc047564a4d826a62",
+      "contribution": "pr-1",
+      "reason": "社区新增风格参考说明卡，非原素材包自带静帧。"
+    },
+    "风格提示词/K_卡通画风/K2_Q 版.jpg": {
+      "sha256": "3ea414e0a4888e2f6dd0598e4ca7b857816261157aabd3092ba0fa45d1c2bc4f",
+      "contribution": "pr-1",
+      "reason": "社区新增风格参考说明卡，非原素材包自带静帧。"
+    },
+    "风格提示词/K_卡通画风/K3_卡哇伊.jpg": {
+      "sha256": "1b38796d9dd6b6da4ac762bb4cab378622d6e4a8bb3e34406a5a5b4498f7e499",
+      "contribution": "pr-1",
+      "reason": "社区新增风格参考说明卡，非原素材包自带静帧。"
+    },
+    "参考实现.js": {
+      "sha256": "7846bd04120f52ac216831bf85915a3433148b3331c317476eda4f92ea8ddf12",
+      "contribution": "local-k-examples",
+      "reason": "由素材库 .md 的参考实现自动打包生成，供风格挑选器离线动态预览；随 .md 更新重新生成；2026-11-24：补 SERIF/PARENT 常量，并新增 M/Z 55 个参考实现。"
+    }
   }
- },
- "modified": {
-  "_统计.json": {
-   "original_sha256": "8902bdf277a34c7722b01e5bb066dd7439ca08617e1f230804d6d02a08cea973",
-   "sha256": "b7beca29fff35b9b91f2aa85423e6c0c36c7da574d7e82bc721f844b182b2c0d",
-   "contribution": "pr-1",
-   "reason": "将当前静帧数从 193 更新为 196。；2026-11-24：补登 H/K 新静帧路径，静帧数更新为 242。"
-  },
-  "风格挑选.html": {
-   "original_sha256": "2175fec5e551814947fad965866747ec0527dd62bb4730bf2fc4fec7360e8490",
-   "sha256": "8e958b37763c866c262e83789e7766b34d560150db81dd81f5c3c57146cf1a8e",
-   "contribution": "local-k-examples",
-   "reason": "含 pr-1 的 K1–K3 参考图路径补充；本地追加：引入 参考实现.js，点开有参考实现的风格时灯箱循环播放动态预览。；2026-11-24：补登 H/K 新静帧路径，静帧数更新为 242。"
-  },
-  "风格提示词/H_现成版式/H10_Creative Mode.md": {
-   "original_sha256": "b940fc55f995be713ca10672c04d8ac74248ba9e47f716dfce0efadac4d6c68f",
-   "sha256": "807a285d267b1fb5fbd41a44c76e55649576616ebbf0a76d4189465a48afc168",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H11_Daisy Days.md": {
-   "original_sha256": "1eb37a3330e3632ca92bdca3e4160fdedd1126c3a4f5e57c049004ea40d21fac",
-   "sha256": "3b2673c4cea4ea95e38c35b88ea8679fd93d5c7591b90e0e772a7e8a6fc57993",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H12_Editorial Forest.md": {
-   "original_sha256": "69e0a8ca40a52e2fdf866f1f6cef05d96ddacc6ca61bd343c13cadf63a34ee69",
-   "sha256": "81a7d24e39b368f055dad95197f3091d23f78b620d8ff54e9f60f6195f729b65",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H1_Biennale Yellow.md": {
-   "original_sha256": "bd3ebd66119b3e324bda4e689aa4e2c1b6cf33151488c8613cae688416aa681a",
-   "sha256": "ec8d2be1453aadd39df723f5365c22c8509e10381672991e5fe40c1867301e6b",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H2_BlockFrame.md": {
-   "original_sha256": "6f012dcf1094105a85f69e96e05705188aebadb6fc2da379a57c7480e958ef05",
-   "sha256": "d23c2cf9dd78b32da7bc8c59dde40d5c557d38c78e0f6d8f6795734d958b58a7",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H3_Blue Professional.md": {
-   "original_sha256": "dd957f36b685c7996c4b6031164323e08b1356d942c462ada207511f5bfe1273",
-   "sha256": "4261eff10f8ad8d01aef2213b83ed0025f5ac2bd381362e9c9e1266cb4a7ccb0",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H4_Bold Poster.md": {
-   "original_sha256": "fcdf275ba727ad58726f7fdc4eeb30a27f546e03c638e9e0e976a470e8f56dc6",
-   "sha256": "782cbfb5ba6f3132531eff3e6f1c6f9bf999c89531a2d3e0fdd09b4d08bc553a",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H5_Broadside.md": {
-   "original_sha256": "40846c4a0b2e2fdc2ec0d0d391b35c29c3cce16a7a46fc2d7e5e7dc92c6154ff",
-   "sha256": "f684c49b14f0cc17ff7db3db2bb2f136ba693f057d52792784363b2a2bb91f15",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H6_Capsule.md": {
-   "original_sha256": "3e1419146c4dc96706efccf73e6cb371d0fee8b613ddbd9ac7e5b4a899791189",
-   "sha256": "2dafb74ab43f7915e5761e4ac64aebee05a8f935cb1ae97e2b3692a812e692e9",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H7_Cartesian.md": {
-   "original_sha256": "9cbc4b078b66b93e9de5ae187bb4538d44d6b4e88cda4c495c904489ee8f11ae",
-   "sha256": "451a9fb9c3e6bbbaef311b2e5cb75ef229016cdefeb5388f079a531967400160",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H8_Cobalt Grid.md": {
-   "original_sha256": "3608a80b5e7892aea8cb6e01c5adbe50ba55c4a1e523d560d3df50ee1d5c481e",
-   "sha256": "351a7995e90a9d44cbe30f73671455cfa93ab11d97ecfdaa0ff42d2cfee2bef0",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/H_现成版式/H9_Coral.md": {
-   "original_sha256": "65bb45d82b8a427eef14783366179a7f782136ffc7f10471ad424aec91892cab",
-   "sha256": "d1104d2f66d0f58baca88ea69161bc399269f12ae6b438b6e395aeeb9a8572e3",
-   "contribution": "local-h-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.H 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K10_粉笔黑板.md": {
-   "original_sha256": "e96fc017c7e442fb22589ec55f36784b65e23f48fff7e4f2d65c2a51fa9d8e3d",
-   "sha256": "8bc220c0368c1bd34becb9ffc080c8f3f8d879b0638d2ee6ff50556d7e5783d1",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K11_手账笔记.md": {
-   "original_sha256": "333203dbc28be3e4ecab636f1ea40e4eed736acb8d3de9bb62093af590437007",
-   "sha256": "74e28fe1058ad9f79441cc9fda6b2c3811372540235b2029d71add170ef46886",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K12_报纸四格.md": {
-   "original_sha256": "f53e0bb79915a1a4211d55b8818e656d371a3977144d39b56ee66e05a2662b76",
-   "sha256": "5ef6a536793d28a94f2a4b5bc561c47f44d7afb656f3297ad99c032a60363883",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K13_美漫网点.md": {
-   "original_sha256": "f7496551e0cd62ea5da08f1a8acc3dd83e7ede4e1554b474b4caf942e0bd613b",
-   "sha256": "22004e937cc428d58e766743b5d1e18808ec8f06ae557ca282664de73f22f526",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K14_波普.md": {
-   "original_sha256": "f1a3c457da564ec82241313706c5f09387243e6f57c885426e9a6326d3fd2567",
-   "sha256": "ea3967a5d9e0c95518dc4d275eae9a766b64b9f84886bace2a2258e48b9a5cb7",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K15_橡皮管 1930.md": {
-   "original_sha256": "3e369d68c0af2ca1764c66567c557f44ba4a2c492c21449cd48575068d66169d",
-   "sha256": "c65b3f610974a90fb4fed9c3a497c0b2ee854b2f2cec2cb89e1fbf0cffbf0fcc",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K16_中世纪现代.md": {
-   "original_sha256": "7e23ddba46c7f801be6e8fc26b4b73460c5dea6ff63a1638b0a6b05b3b57a118",
-   "sha256": "78a31e9b4b9d3478a6a9e688891b8860ddd43e3db1761dd726fc4504214abc04",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K17_几何.md": {
-   "original_sha256": "11eefa798c11288e59f94008e68c82543bae7ef2904d96bd9f6e0028271256e3",
-   "sha256": "59bfa27500335693b9e531696970d003cd0ff6c5939a30bb8196e8cf2e42e196",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K18_水彩.md": {
-   "original_sha256": "d137987a34cc918a4a8fcaf92f91bd2f1764a728ca0cc7555d920b32d57a56c7",
-   "sha256": "5e1a21fbcf4fa3f19c355dec9621ae7c0c604b707ae0ffbecf830632f5c2ede6",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K19_厚涂.md": {
-   "original_sha256": "9fc0bdbccae55aae6b05d51e62870ab749edcecd707cc69161166f505cc641db",
-   "sha256": "6b147d0b5a1db9ed6c56e48735a47e7e816a26ca20babe520607af15acef50ee",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K1_扁平矢量.md": {
-   "original_sha256": "2008666adc1b07b5bbfa2a9bb10b547336a30bab83c27b2b2bd37637b98b02b2",
-   "sha256": "74416dc0b542f96610b59354d3a3574316c6c511b6964dcff0375f5f60378b36",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K20_剪纸.md": {
-   "original_sha256": "209e814ede6b8086bb6149c329ca82635ca8e5e9b9d4997befe4d6c79f99380c",
-   "sha256": "3a741a497ec545c24389ae7c4ba14f19010c501fef1e2201d02597c471828301",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K21_手工纸艺.md": {
-   "original_sha256": "f73148119922eaaea87e657ae6c58d2819478232a8fef410e933f89bbe0bbe3e",
-   "sha256": "aabf0645281a864c5b50f2ea433f398bb566b4b35670ec1b2cf4ae354e450d65",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K22_折纸.md": {
-   "original_sha256": "1ba1a3134e6bb316d3debb1b589299053b716633127b07b5391846789ac56752",
-   "sha256": "81b26e7ce69389a7f142ff31c2fd6bb3b2c070d07763e33d7a58c07b35af67dc",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K23_拼贴.md": {
-   "original_sha256": "be2538c569c48da014e4c70b9fafad60f2e9f6ccaeaa4d32b11ac83873bb6edd",
-   "sha256": "151393b5ae1e1b94316a089363111ade10b216ae31fe1552b1bb3826bd5793b7",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K24_粘土.md": {
-   "original_sha256": "e239494d143d9182eeddae864d5c53cab5be1b097b1d62005092cd2828deff7b",
-   "sha256": "1bafa3c2a0b822803864eede952223f5c0a190d4c5c4eeb4600ab216ebcf1517",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K25_皮克斯式 3D.md": {
-   "original_sha256": "878177de06a731dadb4c16f5fdc304dd9a8ede0eb31598f096339f08c16a6031",
-   "sha256": "9e64cad4c7743e5885f0a63a3c294d0968f5fbd0c704ce79d7a0896365b74377",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K26_卡通渲染 3D.md": {
-   "original_sha256": "648cb0a0fce91ee5bafb80a72ac024fc50b027ec3f9bdf381ffe91dc8b45b66d",
-   "sha256": "546387d5f3d64a141ff0211f935a22bd7f565ba66e189f810d83e7204f83bc5d",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K27_低多边形.md": {
-   "original_sha256": "20ae86d4037c8d0da97184c2dc6e7f43f464c2ed8b114ceb1a4b1449a8f9b7f3",
-   "sha256": "f86fe1062a27abeed561adfb2166b5739e682377da554b78e73ea16aff53b8d5",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K28_像素.md": {
-   "original_sha256": "da346f43b0af0b5cf138301b5b157386c78726aafeb0a8dae35b793cf304d476",
-   "sha256": "32d6ffcc037132da8bad44a05aafa4b5e2f1b79ccb4dc315f911a45a8429be92",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K29_蓝图.md": {
-   "original_sha256": "3c5ee24f5ee12d70a50769af6d7f20f51f97a6984c64aa6ce4acdf5249e79361",
-   "sha256": "a2bf07ecb80fb9fe6eb453c2cb4c8c060f30fb7f1b0eaddaba522078633c64ed",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K2_Q 版.md": {
-   "original_sha256": "cce91700945f679f58d9086d032f2a22e90fc055bcae64868dccfc03818b1077",
-   "sha256": "cf5a9d09f8f5fd4821fe819f66b59537930c8a839c4156f59bda44425157e847",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K30_说明书线稿.md": {
-   "original_sha256": "b11627fe9c965bc8d7389e8ccbe48181c05dbec8bbd0b17ac9725a433e410dce",
-   "sha256": "bf78a9f33d936e6edaee47de43f2dc516ef9b158d69955b2408267e582b6a84d",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K31_平铺整理.md": {
-   "original_sha256": "420e0cba69c14e5e77a086ba3242aa0957986ebfb717e2aff2d41d5ae8fa5ba7",
-   "sha256": "9e0e7bc93a2dddf6d899760600dfa4584fa06224bc6b665cf4313a96bbb11386",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K32_积木.md": {
-   "original_sha256": "f63f5c1aaade5b03ba834601fd7bdd078b5adb864346a6eaf25c03279fb30d8c",
-   "sha256": "3dadcc0ce1ef35344aa748e1c52d7fa24589b7e164ba7ae01fef01295d7934c6",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K33_地铁图.md": {
-   "original_sha256": "918503601ab096adef79f16ecf90e248fbd7879c2a0f23f3361ce3c727a6a180",
-   "sha256": "7c34e51545c89091858fedd067e16c076c3b694e4094f98e5fab89193c238600",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K34_赛博霓虹.md": {
-   "original_sha256": "d71030493afd31fbe7f7a34bf979657c2e49e77baf899cb79b7e7ffde7d0f422",
-   "sha256": "342ee5f131b9fcab03246b92f783fec6bb9237331dc4849feb8cde7e76c8dbae",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K35_旧学院风.md": {
-   "original_sha256": "ff29d584bda9ec23cf9c3411ae768d2e04d5391f6002cd949e82419a445db5f5",
-   "sha256": "f539ba58c05ee55df6d5861d9191df092844c557efd641f78dff6e5f66a74a7f",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K36_丝网印刷.md": {
-   "original_sha256": "ba21393874cd9c42b3952c65a5f13512eb423bb26ce643f47c4bf7803b74c9df",
-   "sha256": "59506dddf5c05d83f17eed41fd1c42538fa7776e81c32098994f72372183b57d",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K37_哥特.md": {
-   "original_sha256": "9ca50c96450ff6c0622b967cb7d96bf77b46ae85a49d8f8a6940a31d6c52a7de",
-   "sha256": "848137fc765016096f17df64e3396b6bda655d768a870effffdcd2d71a7e33cf",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K38_情景喜剧.md": {
-   "original_sha256": "80fe39c35a4a926e7a3a12ad70cff6d54d4a5ca1a6487cfb3e63a3579e384a90",
-   "sha256": "58f995eea12ac675de09801881ee4f2e6e0653635161fdac770de374955e1e09",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K3_卡哇伊.md": {
-   "original_sha256": "a1c83c0b408ff224ddef6af703b7c00651a0a3756824593d8cba83161013bc1d",
-   "sha256": "8b163be51fbe54e85d1a6c14e1329b22f63c56b6ebc943c5e6943960f3dc7f9a",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K4_极简线条小人.md": {
-   "original_sha256": "e5c6ad571f54186dd79cebf6553516ffb1c425d90850340abec9b960426e81e3",
-   "sha256": "a6e72ff5a4d7eafc9276eaa6ede962f1dc55313d025d0779e267a47b17dc2cd8",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K5_孟菲斯扁平人.md": {
-   "original_sha256": "95d8d589c1493067c94ec3aab5ab65def00520a140f77dc0af2ac640c0429614",
-   "sha256": "3994866e5d0400ff5bd79b6e04efe92357bc24d0ce1bd89dbdba761ab1a713d1",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K6_清线漫画.md": {
-   "original_sha256": "1ab896e3782dddd570b4244c263c4fba7ed675efb20f699d1150fecf20fab630",
-   "sha256": "5400721333cc65e8e7ed857e2cc42da30df1a33426aa3f3dc192f32f1da6ceb4",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K7_日式动画.md": {
-   "original_sha256": "766225c683dc0e257fbf1f5877e51deac7e924e0ee10383a8fb290347bf0d8f6",
-   "sha256": "83b66e3916f35c8f8292b526d1c1642f600ae3450b8d5f44216fcd396c84367f",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K8_绘本.md": {
-   "original_sha256": "10e85f963757d55d4938976cf4e64f7686021f2066699b59640313d48681d6c4",
-   "sha256": "55c0da3ff4099f5849bb91e38f656f0ef28583b5cff26cbbeb422fb0e371ae62",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  },
-  "风格提示词/K_卡通画风/K9_涂鸦.md": {
-   "original_sha256": "112fcca15eb45a3d20894fba7e1de8706201cac9a2a3d29eda2cb3fc5c1570fd",
-   "sha256": "d33409e265e9f908eb83759bfc5938c9daa3984ae2a8db0d07b18571ca7a9e1f",
-   "contribution": "local-k-examples",
-   "reason": "按 A-G 代码样片格式追加参考实现示例代码（S.K 绘制函数）；原提示词正文未改动。"
-  }
- },
- "added": {
-  "风格提示词/K_卡通画风/K1_扁平矢量.jpg": {
-   "sha256": "7ebf11524fdbc041d5e066eeac6256e6bce5764b1a6fccadc047564a4d826a62",
-   "contribution": "pr-1",
-   "reason": "社区新增风格参考说明卡，非原素材包自带静帧。"
-  },
-  "风格提示词/K_卡通画风/K2_Q 版.jpg": {
-   "sha256": "3ea414e0a4888e2f6dd0598e4ca7b857816261157aabd3092ba0fa45d1c2bc4f",
-   "contribution": "pr-1",
-   "reason": "社区新增风格参考说明卡，非原素材包自带静帧。"
-  },
-  "风格提示词/K_卡通画风/K3_卡哇伊.jpg": {
-   "sha256": "1b38796d9dd6b6da4ac762bb4cab378622d6e4a8bb3e34406a5a5b4498f7e499",
-   "contribution": "pr-1",
-   "reason": "社区新增风格参考说明卡，非原素材包自带静帧。"
-  },
-  "参考实现.js": {
-   "sha256": "c4cc2d68ca842d46f5cdf1d741bb31e44af49000bd68d750af085eaf78979e9f",
-   "contribution": "local-k-examples",
-   "reason": "由素材库 .md 的参考实现自动打包生成，供风格挑选器离线动态预览；随 .md 更新重新生成。"
-  },
-  "风格提示词/H_现成版式/H10_Creative Mode.jpg": {
-   "sha256": "9fbf15088cf58d4a21fa2e36b5be1eb402fee7b6550ca0a16a50f93df643c703",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/H_现成版式/H11_Daisy Days.jpg": {
-   "sha256": "b7528f1bdd175c930338728de26721e9d51cd5c63b13a61105bed48c2618f5da",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/H_现成版式/H12_Editorial Forest.jpg": {
-   "sha256": "bcbed6222ba87b7fa7659dc6e7aa64e0862f262791c92dd4d0c9ead659d08c1c",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/H_现成版式/H2_BlockFrame.jpg": {
-   "sha256": "79a5cd39b8006526193bf1ad1b93dd8a101df49b12b8ff35e04e2ebe0df8a3a8",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/H_现成版式/H3_Blue Professional.jpg": {
-   "sha256": "f62b6787f0adaa8a16f2deac4c70c18e39cfd275c76f4e1fd389822e46f85beb",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/H_现成版式/H4_Bold Poster.jpg": {
-   "sha256": "5d506bc8ef36d788cff85b8eabb1a20563665c1b78cb007d1de0bcd83e86c0b3",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/H_现成版式/H5_Broadside.jpg": {
-   "sha256": "093dff6cd67737d7363f760229973c5e67529747e21096f9e0c71c7a917f6800",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/H_现成版式/H6_Capsule.jpg": {
-   "sha256": "fae009298919626adbf425ef5b4fd32607d5aa0583fda656e94e95c677f9727a",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/H_现成版式/H7_Cartesian.jpg": {
-   "sha256": "bc8a83ced3e9de144891d04ac51fc25ec04ddb6269dcc2407d2a4b21cccc95c9",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/H_现成版式/H8_Cobalt Grid.jpg": {
-   "sha256": "e64bfceb59f3dd1a27c89e6a84bcd5ddd1cbf04471b51c770f4bab9771256bae",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/H_现成版式/H9_Coral.jpg": {
-   "sha256": "32506d06ea66c6683fbb4ef08d408315859851ed52a0685d6829aca9f4bb5f61",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K10_粉笔黑板.jpg": {
-   "sha256": "b3c43ba2bc6b12fab05cd3528a3b5bcc8efbb47997c1a41e4645d5a9808980e7",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K11_手账笔记.jpg": {
-   "sha256": "e3d99362e71fafd34031b0d1a811b1e8edf6834b760203972c9a5cc1ed7cff10",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K12_报纸四格.jpg": {
-   "sha256": "62b6a9480971fd903b36e9f07d2b9504fbe78f1a7b91050446b3f0242bf77a3d",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K13_美漫网点.jpg": {
-   "sha256": "949208f43ab010e4b9e502968a0806e910ea92ade15376b1a79c64fa7ee076ee",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K14_波普.jpg": {
-   "sha256": "1442fa35a66e1c240e1d58b6f61b83a25c52221bb5c39aa5d39f50f8c1f060e7",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K15_橡皮管 1930.jpg": {
-   "sha256": "fb6fabd1626d61cde32ce8eda02b74fe1037b7c10568dbdae4cb293cffa8dff9",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K16_中世纪现代.jpg": {
-   "sha256": "01104b3074c3f02cbf78bb97905a1108564da1841eeffd8aac0e2edfd4e0e2d2",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K17_几何.jpg": {
-   "sha256": "f67703eb5e54749e82bdb27e281d241c69ed74dca6d27cb8bd71ee5d95388d1c",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K18_水彩.jpg": {
-   "sha256": "251c4b4da67bf5bbfcd578606ee9ae227419eaf943b7e5ee649efc14c8719d2a",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K19_厚涂.jpg": {
-   "sha256": "b13c0d95dab931d87fb37039cd8142d07665a74a43536d9f21edba886423469c",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K20_剪纸.jpg": {
-   "sha256": "e10f2fadf267349244b2ba8778eb4b3f09c3b82b6c8f93e58e42778a7fe2243f",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K21_手工纸艺.jpg": {
-   "sha256": "77f97af98784150ded408021627919354eb32216a0791462d52a5d8feb479a7d",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K22_折纸.jpg": {
-   "sha256": "3fab69b0d07dae0a48685d78ffab389785e24dcda42b5ed3076ff41701a2e8e8",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K23_拼贴.jpg": {
-   "sha256": "5b1da20b95dd4933753a5d1a3fd3e713c95f1c651e403c3ebadca8c4a1183059",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K24_粘土.jpg": {
-   "sha256": "27dae08f336deb0a3d9432a12f882ddbb9912cc67f02750393f2b40c6d5e6dee",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K25_皮克斯式 3D.jpg": {
-   "sha256": "d8237a4afbd0ec9bd7f45edf0cfd28fad6ad5677b9e1722fbe3440e899be858b",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K26_卡通渲染 3D.jpg": {
-   "sha256": "607b187caca3172d3edd8d0005816ff1cdafb82e1d261804bcc7a80673676bb5",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K27_低多边形.jpg": {
-   "sha256": "f8350da06d97ccd7d3ef7987a9b55acc6edc5816d7412b2d28755e556b9b0a51",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K28_像素.jpg": {
-   "sha256": "9bf62cee3386eb9c282466ac7d7c9a3cc4bdfd6773ba9b51f3b18e0a8c94fee6",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K29_蓝图.jpg": {
-   "sha256": "b65de83d9a374ae3793cc25ab1d909a84ec77eeeca1769d1271e0480854b8b7d",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K30_说明书线稿.jpg": {
-   "sha256": "63b4a607184f8381b567accaf2db701fb46d04789817704b27ddd4d737986ba5",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K31_平铺整理.jpg": {
-   "sha256": "e5e6e1f3917cfbd0844f1c5040cbae071796cbe2e352d2a401cf78f66d23d30b",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K32_积木.jpg": {
-   "sha256": "ce24d7faf9fd489236a99d22e87a92ede2e04c69692202634a0b30acdaf5ec40",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K33_地铁图.jpg": {
-   "sha256": "fb77c2b5c2ac95de7e2780c826f09df995a081eb21be76bc08940dceadcb14a8",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K34_赛博霓虹.jpg": {
-   "sha256": "35c3ed96192f8d771e805006e2bfdf980e651931095d28c38dafc28170bd26d7",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K35_旧学院风.jpg": {
-   "sha256": "4449b4d90477e752f239ad350771177bdee2af20c9a75d19fa1de7c5c8466f42",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K36_丝网印刷.jpg": {
-   "sha256": "a4475ff189f260730617eb06e5c26b92d41d1d8e61115f5cb9dd267deb8dc6b1",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K37_哥特.jpg": {
-   "sha256": "ee3f8c1d0abee64c2ce646b3f9ba632be856f7cf05000276f477014c8214ec0b",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K38_情景喜剧.jpg": {
-   "sha256": "ee4145d5363424ed4aba8ca12f43bfd65327dcf68845f8c752060528b34f100c",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K4_极简线条小人.jpg": {
-   "sha256": "eccca4b02577f5b3232cbf93a0fb79038f9edd5981ea0dafde0a8fe59aea6ade",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K5_孟菲斯扁平人.jpg": {
-   "sha256": "e32def5f7bd20c340ad3d113d59c0f9bc6bd39a0632ddd21d05060dc496cd280",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K6_清线漫画.jpg": {
-   "sha256": "09b2315a6676d1e75991c6ea1c06b736f22e6abfb3e0204c3d4ef21a3a402140",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K7_日式动画.jpg": {
-   "sha256": "e67dab0aeecb25c5cd06cc16073ee20e5aa71be79148cb495a98c229df0d468e",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K8_绘本.jpg": {
-   "sha256": "f3e1179d38b0cb832820d6f74c0a7d6a40001439ade2b404b80a22c808a78c84",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  },
-  "风格提示词/K_卡通画风/K9_涂鸦.jpg": {
-   "sha256": "6ca5173b31a9a01c0f01b3a3d7a7e6f65e314933f5d8a2d2a8ab5732c8f3163b",
-   "contribution": "local-h-k-stills",
-   "reason": "按 A-G_代码样片 的参考实现函数（S.Hx / S.Kx）在 1920×1080 画布上渲染代表帧生成的预览静帧，非外部素材；与灯箱动态预览同源。"
-  }
- }
 }
