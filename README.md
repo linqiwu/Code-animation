@@ -6,10 +6,10 @@
 
 **从一句创意，到一段有风格的代码动画。**
 
-341 种风格提示词 · 196 张参考静帧 · 10 个系列 · Claude Code & Codex Skill
+341 种风格提示词 · 242 张参考静帧 · 10 个系列 · Claude Code & Codex Skill
 
 [![Styles](https://img.shields.io/badge/styles-341-b7f47b?style=flat-square&labelColor=161d28)](docs/STYLES.md)
-[![Stills](https://img.shields.io/badge/reference_stills-196-86b7ff?style=flat-square&labelColor=161d28)](docs/images/style-gallery.png)
+[![Stills](https://img.shields.io/badge/reference_stills-242-86b7ff?style=flat-square&labelColor=161d28)](docs/images/style-gallery.png)
 [![Skill](https://img.shields.io/badge/Agent_Skill-Claude_Code_%26_Codex-e6ceaa?style=flat-square&labelColor=161d28)](skills/code-animation-prompts/SKILL.md)
 [![Sharing](https://img.shields.io/badge/sharing-free-ecb7cc?style=flat-square&labelColor=161d28)](LICENSE.md)
 
@@ -23,7 +23,7 @@
 
 ![12 种风格的真实参考静帧](docs/images/style-gallery.png)
 
-以上图片来自素材包自带的参考静帧，编号与提示词一一对应。**196 种有图，145 种为文字参考**；静帧展示视觉方向，实际动画取决于内容、实现和渲染结果。
+以上图片来自素材包自带的参考静帧，编号与提示词一一对应。**242 种有图，99 种为文字参考**；静帧展示视觉方向，实际动画取决于内容、实现和渲染结果。
 
 | 想做什么 | 可以从这里开始 |
 |---|---|
@@ -55,9 +55,9 @@
 1. 将仓库下载到合适的本地目录；若已有同名目录，先检查内容，不覆盖已有改动。
 2. 阅读 README.md、docs/INSTALL.md 和 skills/code-animation-prompts/SKILL.md。
 3. 根据当前助手选择安装目标：Codex 使用 ~/.agents/skills/code-animation-prompts，
-   Claude Code 使用 ~/.claude/skills/code-animation-prompts。
+   Claude Code 使用 ~/.claude/skills/code-animation-prompts。OpenClaw 使用~/.openclaw/skills/code-animation-prompts
    在仓库根目录运行 python scripts/install_skill.py --target codex 或 --target claude。
-   如果当前助手无法确定，只向我确认目标；不要擅自安装到两个位置。
+   如果当前助手无法确定，只向我确认目标；不要擅自安装到三个位置。
 4. 安装时保留完整 skill 文件夹，包括 assets/library 中全部提示词、静帧、HTML、
    示例视频和许可文件。若目标已存在，保留现有目录并报告，不自动删除或覆盖。
 5. 执行已安装目录中的 scripts/styles.py search 水墨，确认可查到风格；
@@ -170,7 +170,7 @@ skills/code-animation-prompts/assets/library/风格挑选.html
 | X · code-video | 31 | 代码视频风格 |
 | R · 照参考学来的 | 7 | 用代码呈现的赛博朋克等视觉参考 |
 | O · 奥斯卡 98 部 | 98 | 按原素材整理的电影画风参考 |
-| **合计** | **341** | **196 张静帧 + 145 份文字参考** |
+| **合计** | **341** | **242 张静帧 + 99 份文字参考** |
 
 → [打开完整风格索引，每个条目均可点击](docs/STYLES.md)
 
