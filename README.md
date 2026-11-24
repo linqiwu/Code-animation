@@ -50,7 +50,7 @@
 **复制下面整段，粘贴给 Claude Code 或 Codex：**
 
 ```text
-请将 https://github.com/XiaoyeCodes/code-animation-prompts 安装为当前编程助手可用的 skill。
+请将 https://github.com/linqiwu/Code-animation 安装为当前编程助手可用的 skill。
 
 1. 将仓库下载到合适的本地目录；若已有同名目录，先检查内容，不覆盖已有改动。
 2. 阅读 README.md、docs/INSTALL.md 和 skills/code-animation-prompts/SKILL.md。
@@ -76,8 +76,8 @@
 需要 Git 和 Python 3.10+。在终端执行：
 
 ```bash
-git clone https://github.com/XiaoyeCodes/code-animation-prompts.git
-cd code-animation-prompts
+git clone https://github.com/linqiwu/Code-animation
+cd Code-animation
 
 # 安装给 Codex
 python scripts/install_skill.py --target codex
@@ -192,7 +192,7 @@ python skills/code-animation-prompts/scripts/render_video.py skills/code-animati
 ## 仓库结构
 
 ```text
-code-animation-prompts/
+Code-animation/
 ├── README.md
 ├── LICENSE.md                       # 各部分的来源与使用约定
 ├── prompts/one-click-import.md       # 复制给 Claude Code / Codex 的导入请求
@@ -223,7 +223,7 @@ code-animation-prompts/
 
 感谢原素材整理者——哔哩哔哩 [**俯仰观照**](https://space.bilibili.com/3690990015613855/?spm_id_from=333.788.upinfo.detail.click) 的资源分享。
 
-感谢 [**Strange Leo (@strangeyu911-tech)**](https://github.com/strangeyu911-tech) 通过 [PR #1](https://github.com/XiaoyeCodes/code-animation-prompts/pull/1) 补充 K1–K3 三张参考说明卡。当前 196 张参考图由原包的 193 张与社区补充的 3 张组成；[来源与改动记录](skills/code-animation-prompts/references/attribution.md) 随技能一起安装。
+感谢 [**Strange Leo (@strangeyu911-tech)**](https://github.com/strangeyu911-tech) 通过 [PR #1](https://github.com/linqiwu/Code-animation/pull/1) 补充 K1–K3 三张参考说明卡。当前 196 张参考图由原包的 193 张与社区补充的 3 张组成；[来源与改动记录](skills/code-animation-prompts/references/attribution.md) 随技能一起安装。
 
 同时感谢 **LemoLab（Lemo-Opuscar）**、**Vincentwei1021（mg-styles-15）**、**Bae-ChangHyun（code-video）**。XiaoyeCodes 在原素材基础上增加技能封装、工具脚本和项目文档；原始提示词、示例和许可保留；挑选器、统计的改动与新增素材另有记录。
 
@@ -241,11 +241,11 @@ code-animation-prompts/
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=XiaoyeCodes%2Fcode-animation-prompts&amp;type=date">
+<a href="https://www.star-history.com/?repos=linqiwu%2FCode-animation&amp;type=date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=XiaoyeCodes/code-animation-prompts&amp;type=Date&amp;theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=XiaoyeCodes/code-animation-prompts&amp;type=Date" />
-    <img alt="Star History Chart for XiaoyeCodes/code-animation-prompts" src="https://api.star-history.com/svg?repos=XiaoyeCodes/code-animation-prompts&amp;type=Date" width="100%" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=linqiwu/Code-animation&amp;type=Date&amp;theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=linqiwu/Code-animation&amp;type=Date" />
+    <img alt="Star History Chart for linqiwu/Code-animation" src="https://api.star-history.com/svg?repos=linqiwu/Code-animation&amp;type=Date" width="100%" />
   </picture>
 </a>
 
