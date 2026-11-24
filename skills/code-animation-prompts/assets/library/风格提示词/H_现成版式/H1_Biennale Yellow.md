@@ -61,3 +61,46 @@
 - 全片是否只有 sun 一个强调色？
 - 标题是否碰到了刻度环？
 - 同一个 `t` 刷新两次，画面是否一模一样？
+
+下面是我们自己写的参考实现：一个绘制函数 S.H1(c, w, h, t, s)，c 是 canvas 的 2D context，w/h 是宽高，t 是秒，s 是给这个函数存状态用的空对象。公共的小工具函数在 ../A-G_代码样片/_公共函数.js 里。
+
+```js
+S.H1 = (c, w, h, t, s) => {
+  const P = '#F2E9D2', SUN = '#F6C23E', INK = '#1D2A68';
+  const SERIF = 'Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif';
+  const u = Math.min(w / 1920, h / 1080), tm = t % 6.5;
+  c.fillStyle = P; c.fillRect(0, 0, w, h);
+  if (!s.tex) s.tex = paperTex(1920, 1080, 1, P, 2026);
+  c.save(); c.translate((w - 1920 * u) / 2, (h - 1080 * u) / 2); c.scale(u, u);
+  c.drawImage(s.tex, 0, 0, 1920, 1080);
+  c.globalAlpha = 1 - ss(6.0, 6.5, tm);
+  const fr = eOut(tm / .8);
+  c.strokeStyle = INK; c.lineWidth = 1.8; c.setLineDash([5200 * fr, 5200]); c.strokeRect(64, 64, 1792, 952); c.setLineDash([]);
+  c.lineWidth = 1.6;
+  for (const y of [148, 932]) { c.beginPath(); c.moveTo(64, y); c.lineTo(64 + 1792 * fr, y); c.stroke(); }
+  const sy = lerp(770, 470, eOut(ss(.4, 1.8, tm))), ha = eOut(ss(.4, 1.8, tm));
+  const g = c.createRadialGradient(1380, sy, 20, 1380, sy, 560);
+  g.addColorStop(0, hex(SUN, ha)); g.addColorStop(.38, hex(SUN, .92 * ha));
+  g.addColorStop(.7, `rgba(246,214,120,${.35 * ha})`); g.addColorStop(1, 'rgba(246,214,120,0)');
+  c.fillStyle = g; c.beginPath(); c.arc(1380, sy, 560, 0, TAU); c.fill();
+  c.fillStyle = hex(SUN, ha); c.beginPath(); c.arc(1380, sy, 250, 0, TAU); c.fill();
+  c.lineWidth = 1.7;
+  for (const [r, a] of [[250, .9], [330, .45], [410, .45]]) { c.strokeStyle = hex(INK, a * ha); c.beginPath(); c.arc(1380, sy, r, 0, TAU); c.stroke(); }
+  const rot = t * Math.PI / 180;
+  c.strokeStyle = hex(INK, .85 * ha);
+  for (let i = 0; i < 120; i++) { const a = rot + i / 120 * TAU, r2 = i % 5 ? 421 : 432; c.beginPath(); c.moveTo(1380 + Math.cos(a) * 410, sy + Math.sin(a) * 410); c.lineTo(1380 + Math.cos(a) * r2, sy + Math.sin(a) * r2); c.stroke(); }
+  const t1 = eOut(ss(1.0, 1.9, tm)), t2 = eOut(ss(1.3, 2.4, tm));
+  c.fillStyle = hex(INK, t1); c.font = `214px ${SERIF}`; c.letterSpacing = '-4px';
+  c.fillText('Biennale', 100, 560 + 24 * (1 - t1));
+  c.fillStyle = hex(INK, t2); c.font = `italic 214px ${SERIF}`;
+  c.fillText('Yellow', 100, 770 + 24 * (1 - t2));
+  const hd = eOut(ss(2.0, 2.8, tm));
+  c.fillStyle = hex(INK, hd); c.font = `26px ${SERIF}`; c.letterSpacing = '6px';
+  c.fillText('THE TWELFTH BIENNALE · EDITORIAL SERIES', 104, 118);
+  c.fillText('N° 01', 1650, 118);
+  c.letterSpacing = '0px';
+  c.font = `34px ${SERIF}`; c.fillText('示例页脚：把想法排成版面', 104, 980);
+  c.textAlign = 'right'; c.fillText('NO. 012', 1816, 980); c.textAlign = 'left';
+  c.restore();
+};
+```
