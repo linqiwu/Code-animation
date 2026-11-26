@@ -135,3 +135,103 @@ How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md)
 ### 示范片
 
 Sunday Ride
+
+下面是我们自己写的参考实现：一个绘制函数 S.L28(c, w, h, t, s)，c 是 canvas 的 2D context，w/h 是宽高，t 是秒，s 是给这个函数存状态用的空对象。公共的小工具函数在 ../A-G_代码样片/_公共函数.js 里。
+
+```js
+S.L28 = (c, w, h, t, s) => {
+  if (!s.init) {
+    s.init = 1; const r = rng(2828);
+    s.specks = []; for (let i = 0; i < 34; i++) s.specks.push([r(), r(), r(), r()]);
+    const tile = (step, rad) => {
+      const [tc, tx] = offscreen(step, step, 1);
+      tx.fillStyle = '#000'; tx.beginPath(); tx.arc(step / 2, step / 2, rad, 0, TAU); tx.fill();
+      return tc;
+    };
+    s.tileY = tile(10, 2.6); s.tileB = tile(11, 3.2); s.tileP = tile(12, 3.6);
+  }
+  const m = Math.min(w, h), q = t % 10;
+  const kick = (t % 1.6) < .4 ? Math.exp(-(t % 1.6) * 7) * Math.sin((t % 1.6) * 40) * m * .012 : 0;
+  const plate = (dx, dy, drawFn) => {
+    c.save(); c.translate(dx + kick, dy - kick * .6);
+    drawFn();
+    c.restore();
+  };
+  c.fillStyle = '#F4EEE2'; c.fillRect(0, 0, w, h);
+  // 纸纤维
+  c.fillStyle = hex('#c9b998', .25);
+  for (const sp of s.specks) c.fillRect(sp[0] * w, sp[1] * h, 2 + sp[2] * 2, 1.5);
+  const sweep = eOut(ss(0, 1.4, q));
+  const gate = (fn) => {
+    if (sweep >= 1) { fn(); return; }
+    c.save(); c.beginPath(); c.moveTo(0, -h * .1); c.lineTo(w * (sweep * 1.3), -h * .1 + h * .12 * Math.sin(t * 6)); c.lineTo(w * (sweep * 1.3 - .25), h * 1.1); c.lineTo(0, h * 1.1); c.closePath(); c.clip();
+    fn(); c.restore();
+    c.strokeStyle = hex('#3a3126', .3); c.lineWidth = m * .02;
+    c.beginPath(); c.moveTo(w * (sweep * 1.3), -h * .1 + h * .12 * Math.sin(t * 6)); c.lineTo(w * (sweep * 1.3 - .25), h * 1.1); c.stroke();
+  };
+  // 黄版：太阳 + 天空网点带
+  plate(w * .004, -h * .004, () => gate(() => {
+    c.fillStyle = '#FFE800'; c.beginPath(); c.arc(w * .26, h * .22, m * .16, 0, TAU); c.fill();
+    c.save(); c.beginPath(); c.rect(0, 0, w, h * .38); c.clip();
+    c.fillStyle = c.createPattern ? (c.createPattern(s.tileY, 'repeat') || '#FFE800') : '#FFE800';
+    c.globalAlpha = .55; c.fillRect(0, 0, w, h * .38); c.globalAlpha = 1;
+    c.restore();
+  }));
+  // 蓝版：城市剪影 + 河 + 骑车人（纸白抠边）
+  plate(-w * .004, h * .003, () => gate(() => {
+    c.fillStyle = '#0078BF';
+    for (let k = 0; k < 7; k++) {
+      const bx = w * (.05 + k * .14), bh = h * (.14 + ((k * 37) % 40) / 100 * .22);
+      c.fillRect(bx, h * .58 - bh, w * .1, bh);
+    }
+    c.save(); c.beginPath(); c.rect(0, h * .68, w, h * .14); c.clip();
+    c.fillStyle = c.createPattern ? (c.createPattern(s.tileB, 'repeat') || '#0078BF') : '#0078BF';
+    c.globalAlpha = .8; c.fillRect(0, h * .68, w, h * .14); c.globalAlpha = 1;
+    c.restore();
+    // 骑车人
+    const cq = Math.floor(t * 12) / 12;
+    const cx = ((q * .075) % 1) * w * 1.1 - w * .05, cy = h * .64 + Math.sin(cq * 11) * m * .005;
+    c.save();
+    c.strokeStyle = '#F4EEE2'; c.lineWidth = m * .022; c.lineJoin = 'round';
+    c.beginPath(); c.moveTo(cx - m * .05, cy - m * .02); c.lineTo(cx + m * .02, cy - m * .08); c.lineTo(cx + m * .05, cy - m * .01); c.stroke();
+    c.restore();
+    c.strokeStyle = '#0078BF'; c.lineWidth = m * .011;
+    c.beginPath(); c.arc(cx - m * .045, cy, m * .028, 0, TAU); c.moveTo(cx + m * .045, cy); c.arc(cx + m * .045, cy, m * .028, 0, TAU); c.stroke();
+    c.beginPath(); c.moveTo(cx - m * .045, cy); c.lineTo(cx, cy - m * .035); c.lineTo(cx + m * .045, cy); c.moveTo(cx, cy - m * .035); c.lineTo(cx + m * .01, cy - m * .075); c.stroke();
+    c.fillStyle = '#0078BF';
+    c.beginPath(); c.arc(cx + m * .005, cy - m * .095, m * .017, 0, TAU); c.fill();
+    c.fillRect(cx - m * .008, cy - m * .085, m * .026, m * .045);
+    c.beginPath(); c.moveTo(cx - m * .01, cy - m * .07 + (cq % .16 < .08 ? m * .012 : -m * .006)); c.lineTo(cx - m * .032, cy - m * .03); c.lineTo(cx - m * .012, cy - m * .028); c.closePath(); c.fill();
+  }));
+  // 粉版：山丘与棚（叠印成紫）
+  plate(w * .003, h * .003, () => gate(() => {
+    c.globalCompositeOperation = 'multiply';
+    c.fillStyle = '#FF48B0';
+    c.beginPath(); c.moveTo(-w * .02, h * .9);
+    for (let i = 0; i <= 10; i++) c.lineTo(i / 10 * w, h * (.78 + Math.sin(i * 1.2) * .035));
+    c.lineTo(w * 1.02, h * .9); c.lineTo(w * 1.02, h * 1.05); c.lineTo(-w * .02, h * 1.05); c.closePath(); c.fill();
+    c.fillRect(w * .68, h * .42, w * .17, h * .02);
+    c.beginPath(); c.moveTo(w * .66, h * .42); c.lineTo(w * .855, h * .42); c.lineTo(w * .82, h * .36); c.lineTo(w * .7, h * .36); c.closePath(); c.fill();
+    c.globalCompositeOperation = 'source-over';
+    c.save(); c.beginPath(); c.rect(0, h * .72, w, h * .22); c.clip();
+    c.fillStyle = c.createPattern ? (c.createPattern(s.tileP, 'repeat') || '#FF48B0') : '#FF48B0';
+    c.globalAlpha = .5; c.fillRect(0, h * .72, w, h * .22); c.globalAlpha = 1;
+    c.restore();
+  }));
+  // 印墨瑕疵：针孔与进纸痕（3Hz 重掷）
+  const sk = Math.floor(t * 3);
+  for (let i = 0; i < 12; i++) {
+    const ph = Math.sin((i * 31 + sk * 17)) * 43758.545;
+    const px = ((ph - Math.floor(ph)) * w), py2 = ((Math.sin(i * 77 + sk * 13) * 43758.545 % 1 + 1) % 1) * h;
+    c.fillStyle = hex('#F4EEE2', .8); c.fillRect(px, py2, 2.4, 2.4);
+  }
+  c.fillStyle = hex('#3a3126', .05);
+  for (let i = 0; i < 4; i++) c.fillRect(0, (i * 173 % 100) / 100 * h + Math.sin(sk + i) * 4, w, m * .004);
+  // 字幕（纸白抠边条）
+  c.fillStyle = '#F4EEE2'; c.fillRect(w * .18, h * .86, w * .64, h * .09);
+  c.fillStyle = '#0078BF'; c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.font = `700 ${(m * .05).toFixed(1)}px ${SANS}`;
+  c.fillText('周日早晨 · 骑车穿城', w * .5 + kick * .5, h * .905);
+};
+
+```

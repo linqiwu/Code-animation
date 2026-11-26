@@ -127,3 +127,89 @@ How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md)
 ### 示范片
 
 The Last Save Point
+
+下面是我们自己写的参考实现：一个绘制函数 S.L49(c, w, h, t, s)，c 是 canvas 的 2D context，w/h 是宽高，t 是秒，s 是给这个函数存状态用的空对象。公共的小工具函数在 ../A-G_代码样片/_公共函数.js 里。
+
+```js
+S.L49 = (c, w, h, t, s) => {
+  const m = Math.min(w, h), q = t % 8;
+  const P = Math.max(3, Math.round(m / 78)); // 像素粒
+  const sn = v => Math.round(v / P) * P;
+  if (!s.init) {
+    s.init = 1;
+    const r = rng(49001);
+    s.dith = []; for (let i = 0; i < 60; i++) s.dith.push([r(), r()]);
+    s.world = []; for (let i = 0; i < 9; i++) s.world.push([r(), .5 + r() * .5, r() > .5]);
+  }
+  const night = q > 5.2 && q < 7.2;
+  // 天空分带 + Bayer 抖动
+  const skyTop = night ? '#241C58' : '#3C78D8', skyBot = night ? '#6A3A8C' : '#A8D8F0';
+  for (let i = 0; i < 7; i++) {
+    c.fillStyle = mixHex(skyTop, skyBot, i / 6);
+    c.fillRect(0, sn(i * h * .075), w, sn(h * .08));
+  }
+  s.dith.forEach(d => {
+    c.fillStyle = hex(night ? '#F8E8C8' : '#FFFFFF', .45);
+    c.fillRect(sn(d[0] * w), sn(d[1] * h * .5), P, P);
+  });
+  // 远山（像素多边形）+ 地面
+  const scroll = Math.floor(t * 26) * P;
+  c.fillStyle = night ? '#2E2A66' : '#5C90C8';
+  c.beginPath(); c.moveTo(0, h * .58);
+  for (let i = 0; i <= 12; i++) c.lineTo(sn(i * w / 12), sn(h * (.42 + .1 * Math.sin(i * 1.3))));
+  c.lineTo(w, h * .58); c.closePath(); c.fill();
+  c.fillStyle = night ? '#3A5848' : '#58A048'; c.fillRect(0, sn(h * .58), w, h * .42);
+  c.fillStyle = night ? '#2A4438' : '#407838'; c.fillRect(0, sn(h * .665), w, h * .05);
+  // 树（滚动视差）
+  s.world.forEach(tr => {
+    const tx = ((tr[0] * w - scroll * tr[1] * .4) % (w * 1.2) + w * 1.2) % (w * 1.2) - w * .1;
+    const ty = sn(h * .58), th2 = sn(m * .1 * tr[1]);
+    c.fillStyle = night ? '#20384C' : '#2E6848';
+    c.fillRect(sn(tx), ty - th2, P * 3, th2);
+    c.fillRect(sn(tx - th2 * (tr[2] ? .4 : .5)), ty - th2 * (tr[2] ? 1.35 : 1.3), sn(th2 * (tr[2] ? 1.1 : 1.2)), sn(th2 * (tr[2] ? .5 : .9)));
+  });
+  // 勇者精灵（8fps 行走，帽尾是剪影标记）
+  const wf = Math.floor(t * 8) % 4, step = [0, P, 0, -P][wf];
+  const hx = sn(w * .3), hy = sn(h * .5);
+  c.fillStyle = night ? '#182848' : '#283868';
+  c.fillRect(hx, hy, P * 8, P * 10);
+  c.fillRect(hx + P * 2, hy - P * 6, P * 5, P * 6);
+  c.fillRect(hx + P, hy - P * 7, P * 7, P * 2);
+  c.fillRect(hx - P * 3, hy - P * 6, P * 4, P * 2);
+  c.fillStyle = '#F8D8A8'; c.fillRect(hx + P * 3, hy - P * 4, P * 3, P * 2);
+  c.fillStyle = '#181838'; c.fillRect(hx + P * 5, hy - P * 4, P, P);
+  c.fillStyle = night ? '#182848' : '#283868';
+  c.fillRect(hx + P, hy + P * 10, P * 2, P * 4 + step);
+  c.fillRect(hx + P * 5, hy + P * 10, P * 2, P * 4 - step);
+  c.fillStyle = '#D84848'; c.fillRect(hx + P * 6, hy + P * 2, P * 4, P * 2);
+  // 对话框（16-bit 蓝框 + 打字 + ▼）
+  const bx0 = w * .08, by0 = h * .7, bw0 = w * .84, bh0 = h * .24;
+  c.fillStyle = '#101028'; c.fillRect(bx0 - P * 2, by0 - P * 2, bw0 + P * 4, bh0 + P * 4);
+  c.fillStyle = '#F8F8F8'; c.fillRect(bx0 - P, by0 - P, bw0 + P * 2, bh0 + P * 2);
+  c.fillStyle = '#2038A8'; c.fillRect(bx0, by0, bw0, bh0);
+  for (let i = 0; i < 12; i++) { c.fillStyle = hex('#4868D8', .7); c.fillRect(sn(bx0 + s.dith[i][0] * bw0), sn(by0 + s.dith[i][1] * bh0), P, P); }
+  c.fillStyle = '#F8D8A8'; c.fillRect(bx0 + P * 3, by0 + P * 3, P * 10, P * 10);
+  c.fillStyle = '#181838'; c.fillRect(bx0 + P * 3, by0 + P * 2, P * 10, P * 3);
+  c.fillRect(bx0 + P * 5, by0 + P * 6, P * 2, P * 2); c.fillRect(bx0 + P * 9, by0 + P * 6, P * 2, P * 2);
+  const msg = '勇士在最终之门前存下了档';
+  const nch = Math.max(1, Math.floor((q % 2.6) / 2.6 * msg.length));
+  c.font = `700 ${P * 4}px ${MONO}`; c.textAlign = 'left'; c.fillStyle = '#F8F8F8';
+  c.fillText(msg.slice(0, nch), bx0 + P * 16, by0 + P * 8);
+  c.fillStyle = '#A8C8F8'; c.font = `400 ${P * 3}px ${MONO}`;
+  c.fillText('冒险记录 · 第 12 章', bx0 + P * 16, by0 + P * 13);
+  if (Math.floor(t * 2.5) % 2) {
+    c.fillStyle = '#F8F8F8';
+    c.fillRect(bx0 + bw0 - P * 6, by0 + bh0 - P * 5, P * 4, P * 2);
+    c.fillRect(bx0 + bw0 - P * 5, by0 + bh0 - P * 3, P * 2, P * 2);
+  }
+  // 顶部状态窗
+  c.fillStyle = '#101028'; c.fillRect(w * .06, h * .05, w * .3, h * .09);
+  c.fillStyle = '#F8F8F8'; c.font = `700 ${P * 3.5}px ${MONO}`; c.textAlign = 'left';
+  c.fillText('LV.12  勇者', w * .075, h * .095);
+  for (let i = 0; i < 10; i++) {
+    c.fillStyle = i < 7 ? '#E84848' : '#484858';
+    c.fillRect(w * .075 + i * P * 3.2, h * .108, P * 2.6, P * 2);
+  }
+};
+
+```
