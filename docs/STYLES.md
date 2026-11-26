@@ -71,14 +71,14 @@
 | M7 | [极简卡点](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M7_%E6%9E%81%E7%AE%80%E5%8D%A1%E7%82%B9.md) | 文字参考 |
 | M32 | [竖屏快节奏 POV](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M32_%E7%AB%96%E5%B1%8F%E5%BF%AB%E8%8A%82%E5%A5%8F%20POV.md) | 文字参考 |
 | M34 | [新闻快讯盘点](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M34_%E6%96%B0%E9%97%BB%E5%BF%AB%E8%AE%AF%E7%9B%98%E7%82%B9.md) | 文字参考 |
-| M14 | [](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M14_.md) | 文字参考 |
-| M15 | [](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M15_.md) | 文字参考 |
-| M16 | [](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M16_.md) | 文字参考 |
-| M17 | [](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M17_.md) | 文字参考 |
-| M26 | [](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M26_.md) | 文字参考 |
-| M35 | [](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M35_.md) | 文字参考 |
-| M39 | [](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M39_.md) | 文字参考 |
-| M40 | [](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M40_.md) | 文字参考 |
+| M14 | [纪录片访谈体](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M14_.md) | 文字参考 |
+| M15 | [翻书绘本体](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M15_.md) | 文字参考 |
+| M16 | [双人对话体](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M16_.md) | 文字参考 |
+| M17 | [预告片式快剪](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M17_.md) | 文字参考 |
+| M26 | [声音驱动画面](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M26_.md) | 文字参考 |
+| M35 | [数据可视化动效](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M35_.md) | 文字参考 |
+| M39 | [戏剧舞台体](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M39_.md) | 文字参考 |
+| M40 | [产品开箱展示](../skills/code-animation-prompts/assets/library/%E9%A3%8E%E6%A0%BC%E6%8F%90%E7%A4%BA%E8%AF%8D/M_%E5%8A%A8%E6%80%81%E9%A3%8E%E6%A0%BC/M40_.md) | 文字参考 |
 
 ## K 卡通画风 · 38
 

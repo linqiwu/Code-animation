@@ -22,7 +22,7 @@ const toRGB = h => h[0] === '#' ? (n => [n >> 16 & 255, n >> 8 & 255, n & 255])(
 const mixHex = (h1, h2, t) => { const a = toRGB(h1), b = toRGB(h2), c = k => Math.round(lerp(a[k], b[k], t)); return `rgb(${c(0)},${c(1)},${c(2)})`; };
 function vgrad(ctx, h, c1, c2) { const g = ctx.createLinearGradient(0, 0, 0, h); g.addColorStop(0, c1); g.addColorStop(1, c2); return g; }
 function glowDot(ctx, x, y, r, col, a) { const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, hex(col, a)); g.addColorStop(1, hex(col, 0)); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); }
-function offscreen(w, h, dpr) { const c = document.createElement('canvas'); c.width = Math.max(1, Math.round(w * dpr)); c.height = Math.max(1, Math.round(h * dpr)); const x = c.getContext('2d'); x.setTransform(dpr, 0, 0, dpr, 0, 0); return [c, x]; }
+function offscreen(w, h, dpr) { dpr = dpr || 1; const c = document.createElement('canvas'); c.width = Math.max(1, Math.round(w * dpr)); c.height = Math.max(1, Math.round(h * dpr)); const x = c.getContext('2d'); x.setTransform(dpr, 0, 0, dpr, 0, 0); return [c, x]; }
 function paperTex(w, h, dpr, base, seed) {
   const [c, x] = offscreen(w, h, dpr); const r = rng(seed);
   x.fillStyle = base; x.fillRect(0, 0, w, h);
@@ -166,6 +166,69 @@ S.B2 = (c, w, h, t, s) => {
     if (z < .8) { c.fillStyle = `rgba(255,236,200,${.8 * fl})`; c.beginPath(); c.arc(x, y, Math.max(.6, size * .12), 0, TAU); c.fill(); }
   }
   c.globalCompositeOperation = 'source-over';
+};
+
+// ---- B3 ----
+S.B3 = (c, w, h, t, s) => {
+  const N = 5000, PER = 4.8;
+  const COL = ['#F08A8A', '#F1C070', '#A9C6FF', '#F6EBD0'];
+  const SUB = ['先有一颗心', '再有一个房子', '里面住进一个人', '合起来叫家'];
+  if (!s.init) {
+    s.init = 1;
+    const r = rng(2026);
+    const heart = (x, y) => { y = -y * 1.15 + .1; x *= 1.15; return Math.pow(x * x + y * y - 1, 3) - x * x * y * y * y <= 0; };
+    const house = (x, y) => (Math.abs(x) <= .6 && y >= -.1 && y <= .75 && !(Math.abs(x) < .14 && y > .38)) || (y < -.1 && y > -.8 && Math.abs(x) <= .8 * (y + .8) / .7);
+    const person = (x, y) => (x * x + (y + .55) * (y + .55) <= .05) || (y >= -.28 && y <= .85 && Math.abs(x) <= .25 + (y + .28) * .2);
+    const shuffle = arr => { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); const tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp; } return arr; };
+    const topUp = pts => { const out = pts.slice(); let i = 0; while (out.length < N) { const p = pts[i % pts.length]; out.push([p[0] + (r() - .5) * .008, p[1] + (r() - .5) * .008]); i++; } return out; };
+    const sample = inside => { const pts = []; let guard = 0; while (pts.length < N && guard++ < N * 80) { const x = r() * 2 - 1, y = r() * 2 - 1; if (inside(x, y)) pts.push([x, y]); } return shuffle(topUp(pts)); };
+    const hc = document.createElement('canvas'); hc.width = hc.height = 400;
+    const hx = hc.getContext('2d'); hx.fillStyle = '#fff'; hx.font = `bold 340px ${SERIF}`; hx.textAlign = 'center'; hx.textBaseline = 'middle'; hx.fillText('家', 200, 210);
+    const hd = hx.getImageData(0, 0, 400, 400).data, hpts = [];
+    for (let py = 0; py < 400; py += 2) for (let px = 0; px < 400; px += 2) if (hd[(py * 400 + px) * 4 + 3] > 128) hpts.push([px / 200 - 1, py / 200 - 1]);
+    s.tg = [sample(heart), sample(house), sample(person), topUp(shuffle(hpts))];
+    s.p = Array.from({ length: N }, () => ({ a: r() * TAU, m: r(), ph: r() * TAU, f: .6 + r() * 1.0, sz: r(), glow: r() < .2 }));
+    s.stars = Array.from({ length: 220 }, () => [r(), r(), r() * TAU, .6 + r() * 1.2]);
+  }
+  const m = Math.min(w, h), cx = w / 2, cy = h * 520 / 1080, SC = h * 0.36;
+  const zoom = 1 + 0.015 * Math.sin(0.33 * t);
+  c.fillStyle = '#07080C'; c.fillRect(0, 0, w, h);
+  const bg = c.createRadialGradient(cx, cy, 0, cx, cy, 800 * m / 1080);
+  bg.addColorStop(0, 'rgba(40,46,66,.30)'); bg.addColorStop(1, 'rgba(7,8,12,0)'); c.fillStyle = bg; c.fillRect(0, 0, w, h);
+  for (const st of s.stars) { const a = .15 + .25 * (.5 + .5 * Math.sin(st[2] + t * st[3])); c.fillStyle = `rgba(220,228,255,${a})`; c.fillRect(st[0] * w, st[1] * h, 1.2, 1.2); }
+  const k = Math.floor(t / PER) % 4, n = (k + 1) % 4, q = t % PER;
+  const cA = toRGB(COL[k]), cB = toRGB(COL[n]);
+  const pos = (i, tt) => {
+    tt = Math.max(0, tt);
+    const kk = ((Math.floor(tt / PER) % 4) + 4) % 4, nn = (kk + 1) % 4, qq = ((tt % PER) + PER) % PER;
+    const A = s.tg[kk][i] || [0, 0], B = s.tg[nn][i] || [0, 0], e = ss(2.4, 4.2, qq), p = s.p[i];
+    const Cx = (A[0] + B[0]) / 2 + Math.cos(p.a) * (0.35 + 0.9 * p.m);
+    const Cy = (A[1] + B[1]) / 2 + Math.sin(p.a) * (0.35 + 0.9 * p.m);
+    let Px = (1 - e) * (1 - e) * A[0] + 2 * (1 - e) * e * Cx + e * e * B[0];
+    let Py = (1 - e) * (1 - e) * A[1] + 2 * (1 - e) * e * Cy + e * e * B[1];
+    const jit = 0.012 * (1 - Math.sin(Math.PI * e));
+    Px += Math.cos(p.ph + 1.3 * tt) * jit; Py += Math.sin(1.7 * p.ph + 1.1 * tt) * jit;
+    return [cx + Px * SC * zoom, cy + Py * SC * zoom, e];
+  };
+  c.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < N; i++) {
+    const p = s.p[i], L = .75 + .25 * Math.sin(p.f * t + p.ph), r0 = 1.1 + 1.6 * p.sz;
+    const [x, y, e] = pos(i, t);
+    const cr = Math.round(lerp(cA[0], cB[0], e)), cg = Math.round(lerp(cA[1], cB[1], e)), cb = Math.round(lerp(cA[2], cB[2], e));
+    const trail = [[1, 1, 0], [.5, .8, .045], [.25, .6, .09]];
+    for (const [ta, tr, dt] of trail) {
+      const pt = pos(i, t - dt);
+      c.fillStyle = `rgba(${cr},${cg},${cb},${.55 * L * ta})`;
+      c.beginPath(); c.arc(pt[0], pt[1], Math.max(.5, r0 * tr), 0, TAU); c.fill();
+    }
+    if (p.glow) { c.fillStyle = `rgba(${cr},${cg},${cb},.05)`; c.beginPath(); c.arc(x, y, r0 * 3, 0, TAU); c.fill(); }
+  }
+  c.globalCompositeOperation = 'source-over';
+  const sa = q < .3 ? 0 : q < 1.0 ? ss(.3, 1.0, q) : q < 2.1 ? 1 : q < 2.5 ? 1 - ss(2.1, 2.5, q) : 0;
+  if (sa > 0) {
+    c.font = `500 ${Math.max(16, m / 23.5)}px ${SERIF}`; c.textAlign = 'center'; c.textBaseline = 'middle';
+    c.fillStyle = `rgba(237,230,214,${.85 * sa})`; c.fillText(SUB[k], cx, h * .89);
+  }
 };
 
 // ---- B4 ----
