@@ -35,6 +35,10 @@
     "local-l-examples": {
       "author": "本地用户请求（OpenClaw 会话 2026-11-26）",
       "description": "按 A-G/K/H/M/Z .md 惯例为 L 系列 59 条补充参考实现（S.L1–S.L59），仅在各条 .md 文末追加代码块并打包进 参考实现.js；提示词原文未动。"
+    },
+    "local-l-3d-demos": {
+      "author": "本地用户请求（会话 2026-11-27）",
+      "description": "为 L 系列中依赖真 3D/PBR/空间镜头的条目另建独立 three.js 演示工程（three-demos/，不替换挑选器内 Canvas 2D 示意）；修复 L36 蓝图渐变 non-finite 报错，并在公共 glowDot 加非有限值兜底。"
     }
   },
   "modified": {
@@ -46,9 +50,9 @@
     },
     "风格挑选.html": {
       "original_sha256": "2175fec5e551814947fad965866747ec0527dd62bb4730bf2fc4fec7360e8490",
-      "sha256": "1480ea0a3911a0f3193553fb5dda337d5c3a753840cc5e14630324581eac322a",
-      "contribution": "local-picker-fix",
-      "reason": "含 pr-1 的 K1–K3 参考图路径补充；本地追加：引入 参考实现.js，点开有参考实现的风格时灯箱循环播放动态预览；2026-11-24：openLb 时重置 animT0、播放前复位画布状态，并补齐 M14 等 8 条词条字段。；2026-11-24：补登 H/K 新静帧路径，静帧数更新为 242。"
+      "sha256": "d25789faec50c63e7332e30e89d98b41e2ba51dc18bfea2e520a4cb8e765431e",
+      "contribution": "local-l-3d-demos",
+      "reason": "含 pr-1 的 K1–K3 参考图路径补充；本地追加：引入 参考实现.js，点开有参考实现的风格时灯箱循环播放动态预览；2026-11-24：openLb 时重置 animT0、播放前复位画布状态，并补齐 M14 等 8 条词条字段。；2026-11-24：补登 H/K 新静帧路径，静帧数更新为 242。；2026-11-27：为 L11/L12/L14/L56/L57/L58/L59 登记 three.js 演示入口，灯箱新增“3D 演示”外链按钮（无 demo 的条目隐藏）。"
     },
     "风格提示词/H_现成版式/H10_Creative Mode.md": {
       "original_sha256": "b940fc55f995be713ca10672c04d8ac74248ba9e47f716dfce0efadac4d6c68f",
@@ -1058,9 +1062,9 @@
       "reason": "社区新增风格参考说明卡，非原素材包自带静帧。"
     },
     "参考实现.js": {
-      "sha256": "468a41e6a0c08b019187ca734da13dd8e96da8dc3ca88cdae4e714c448df4609",
-      "contribution": "local-k-examples",
-      "reason": "由素材库 .md 的参考实现自动打包生成，供风格挑选器离线动态预览；随 .md 更新重新生成；2026-11-24：补 SERIF/PARENT 常量，并新增 M/Z 55 个参考实现。；2026-11-26：offscreen 兜底 dpr=1，修复 B1/C1/D1/E2 离屏 0×0 导致动态预览空白。；2026-11-26：补写 S.B3 粒子聚形参考实现；offscreen 兜底 dpr=1。；2026-11-26：新增 L 系列 59 个参考实现。；2026-11-26：新增 L 系列 59 个参考实现；补 roundRect 兼容垫片。"
+      "sha256": "ed06958cb89159e72c82c34b2ad6a6abaf6ca6021b229461961f33170ee5f6a7",
+      "contribution": "local-l-3d-demos",
+      "reason": "由素材库 .md 的参考实现自动打包生成，供风格挑选器离线动态预览；随 .md 更新重新生成；2026-11-24：补 SERIF/PARENT 常量，并新增 M/Z 55 个参考实现。；2026-11-26：offscreen 兜底 dpr=1，修复 B1/C1/D1/E2 离屏 0×0 导致动态预览空白。；2026-11-26：补写 S.B3 粒子聚形参考实现；offscreen 兜底 dpr=1。；2026-11-26：新增 L 系列 59 个参考实现。；2026-11-26：新增 L 系列 59 个参考实现；补 roundRect 兼容垫片。；2026-11-27：glowDot 非有限值兜底；修复 S.L36 热点取到 poly 数组导致 createRadialGradient non-finite。"
     },
     "风格提示词/H_现成版式/H10_Creative Mode.jpg": {
       "sha256": "9fbf15088cf58d4a21fa2e36b5be1eb402fee7b6550ca0a16a50f93df643c703",

@@ -56,7 +56,7 @@
 2. 阅读 README.md、docs/INSTALL.md 和 skills/code-animation-prompts/SKILL.md。
 3. 根据当前助手选择安装目标：Codex 使用 ~/.agents/skills/code-animation-prompts，
    Claude Code 使用 ~/.claude/skills/code-animation-prompts。OpenClaw 使用~/.openclaw/skills/code-animation-prompts
-   在仓库根目录运行 python scripts/install_skill.py --target codex 或 --target claude。
+   在仓库根目录运行 python scripts/install_skill.py --target codex 或 --target claude 或--target openclaw。
    如果当前助手无法确定，只向我确认目标；不要擅自安装到三个位置。
 4. 安装时保留完整 skill 文件夹，包括 assets/library 中全部提示词、静帧、HTML、
    示例视频和许可文件。若目标已存在，保留现有目录并报告，不自动删除或覆盖。

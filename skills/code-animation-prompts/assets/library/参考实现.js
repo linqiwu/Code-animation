@@ -21,7 +21,7 @@ const hex = (h, a = 1) => { const n = parseInt(h.slice(1), 16); return `rgba(${n
 const toRGB = h => h[0] === '#' ? (n => [n >> 16 & 255, n >> 8 & 255, n & 255])(parseInt(h.slice(1), 16)) : h.match(/[\d.]+/g).slice(0, 3).map(Number);
 const mixHex = (h1, h2, t) => { const a = toRGB(h1), b = toRGB(h2), c = k => Math.round(lerp(a[k], b[k], t)); return `rgb(${c(0)},${c(1)},${c(2)})`; };
 function vgrad(ctx, h, c1, c2) { const g = ctx.createLinearGradient(0, 0, 0, h); g.addColorStop(0, c1); g.addColorStop(1, c2); return g; }
-function glowDot(ctx, x, y, r, col, a) { const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, hex(col, a)); g.addColorStop(1, hex(col, 0)); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); }
+function glowDot(ctx, x, y, r, col, a) { if (!isFinite(x)) x = 0; if (!isFinite(y)) y = 0; if (!isFinite(r) || r <= 0) r = 1; const g = ctx.createRadialGradient(x, y, 0, x, y, r); g.addColorStop(0, hex(col, a)); g.addColorStop(1, hex(col, 0)); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.fill(); }
 function offscreen(w, h, dpr) { dpr = dpr || 1; const c = document.createElement('canvas'); c.width = Math.max(1, Math.round(w * dpr)); c.height = Math.max(1, Math.round(h * dpr)); const x = c.getContext('2d'); x.setTransform(dpr, 0, 0, dpr, 0, 0); return [c, x]; }
 function paperTex(w, h, dpr, base, seed) {
   const [c, x] = offscreen(w, h, dpr); const r = rng(seed);
@@ -8958,11 +8958,12 @@ S.L36 = (c, w, h, t, s) => {
     c.restore();
   }
   if (q < 6.4) {
-    const f = stage(0, 6.2), idx = Math.floor(f * LP.length * 1.2);
-    const it = LP[Math.min(idx, LP.length - 1)];
-    const nx = f * 6.2 % .5 * 2;
-    glowDot(c, it[1] + Math.sin(t * 21) * 2, it[2] + Math.cos(t * 17) * 2, m * .02, '#E7F0F9', .5);
-    c.fillStyle = '#ffffff'; c.fillRect(it[1] - 1.5, it[2] - 1.5, 3, 3);
+    const f = stage(0, 6.2), idx = Math.min(Math.floor(f * LP.length * 1.2), LP.length - 1);
+    const it = LP[idx];
+    const hx = Array.isArray(it[1]) ? it[1][0] : it[1];
+    const hy = Array.isArray(it[1]) ? it[1][1] : it[2];
+    glowDot(c, hx + Math.sin(t * 21) * 2, hy + Math.cos(t * 17) * 2, m * .02, '#E7F0F9', .5);
+    c.fillStyle = '#ffffff'; c.fillRect(hx - 1.5, hy - 1.5, 3, 3);
   }
 };
 
