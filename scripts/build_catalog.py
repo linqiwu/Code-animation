@@ -23,7 +23,8 @@ def main():
         entries.append(dict(id=e["id"], name=e["name"], series=e["s"], category=e["cat"],
                             description=e.get("desc", ""), fit=e.get("fit", ""), tags=e.get("tags", []),
                             file="assets/library/" + e["file"],
-                            image="assets/library/" + e["img"] if e.get("img") else ""))
+                            image="assets/library/" + e["img"] if e.get("img") else "",
+                            demo=e.get("demo", "")))
     counts = dict(Counter(e["series"] for e in entries))
     stats = json.loads((LIBRARY / "_统计.json").read_text(encoding="utf-8"))
     assert len(entries) == stats["total"] == len({e["id"] for e in entries})

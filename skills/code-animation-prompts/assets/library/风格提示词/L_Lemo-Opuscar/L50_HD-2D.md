@@ -121,3 +121,101 @@ How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md)
 ### 示范片
 
 The Lampbearer
+
+下面是我们自己写的参考实现：一个绘制函数 S.L50(c, w, h, t, s)，c 是 canvas 的 2D context，w/h 是宽高，t 是秒，s 是给这个函数存状态用的空对象。公共的小工具函数在 ../A-G_代码样片/_公共函数.js 里。
+
+```js
+S.L50 = (c, w, h, t, s) => {
+  const m = Math.min(w, h), q = t % 8;
+  if (!s.init) {
+    s.init = 1;
+    const r = rng(50001);
+    s.stars = []; for (let i = 0; i < 36; i++) s.stars.push([r(), r(), r()]);
+    s.rain = []; for (let i = 0; i < 34; i++) s.rain.push([r(), r(), .7 + r() * .8]);
+    s.tex = []; for (let i = 0; i < 20; i++) s.tex.push([r(), r(), r()]);
+  }
+  const camX = Math.sin(t * .18) * m * .012, camY = Math.cos(t * .13) * m * .008;
+  c.save(); c.translate(camX, camY);
+  // 冷调夜空 + 星
+  c.fillStyle = vgrad(c, h, '#141C3C', '#2A3A66'); c.fillRect(-m * .03, -m * .03, w + m * .06, h + m * .06);
+  s.stars.forEach(st => {
+    c.fillStyle = hex('#C8D8FF', .25 + .55 * Math.abs(Math.sin(t * (1 + st[2]) + st[2] * 9)));
+    c.fillRect(st[0] * w, st[1] * h * .3, m * .004, m * .004);
+  });
+  c.fillStyle = '#20263E'; c.fillRect(-m * .03, h * .55, w + m * .06, h * .5);
+  // 像素贴图肌理（色阶抖动）
+  s.tex.forEach(tx => {
+    c.fillStyle = hex('#3A4468', .5);
+    c.fillRect(tx[0] * w, h * (.58 + tx[1] * .38), m * .008, m * .004);
+  });
+  // 房屋（盒体 + 发光窗 + 呼吸灯火）
+  const house = (x, y, ww, hh2, roof) => {
+    c.fillStyle = hex('#000000', .28); c.fillRect(x + ww * .72, y - hh2, ww * .28, hh2);
+    c.fillStyle = '#4A5478'; c.fillRect(x, y - hh2, ww, hh2);
+    c.fillStyle = roof;
+    c.beginPath(); c.moveTo(x - ww * .08, y - hh2); c.lineTo(x + ww * .5, y - hh2 - m * .07); c.lineTo(x + ww * 1.08, y - hh2); c.closePath(); c.fill();
+    for (let k = 0; k < 3; k++) {
+      const fl = .7 + .3 * Math.sin(t * 1.3 + x + k * 2);
+      c.fillStyle = hex('#FFC96B', .5 + .45 * fl);
+      c.fillRect(x + ww * (.12 + k * .28), y - hh2 * .72, ww * .16, hh2 * .3);
+      glowDot(c, x + ww * (.2 + k * .28), y - hh2 * .58, m * .05, '#FFB85C', .28 * fl);
+    }
+  };
+  house(w * .1, h * .62, w * .16, h * .3, '#6A4A6E');
+  house(w * .62, h * .58, w * .13, h * .22, '#7A5A4E');
+  house(w * .82, h * .64, w * .14, h * .26, '#4A5A7E');
+  // 路灯 + 长影
+  const lampX = w * .42, lampY = h * .6;
+  c.fillStyle = '#2A3050'; c.fillRect(lampX - m * .008, lampY - h * .26, m * .016, h * .26);
+  c.fillStyle = hex('#FFE0A0', .9); c.fillRect(lampX - m * .02, lampY - h * .28, m * .04, m * .03);
+  const flick = .85 + .12 * Math.sin(t * 6.3) + .05 * Math.sin(t * 17.1);
+  glowDot(c, lampX, lampY - h * .26, m * .3 * flick, '#FFC978', .5);
+  c.fillStyle = hex('#0A0E22', .35);
+  c.beginPath(); c.moveTo(lampX, lampY); c.lineTo(lampX - m * .22, h * .88); c.lineTo(lampX + m * .12, h * .88); c.closePath(); c.fill();
+  // 提灯小英雄（像素精灵 + selout）
+  const wf = Math.floor(t * 8) % 2;
+  const px2 = w * .47, py2 = h * .62;
+  c.fillStyle = '#10162E';
+  c.fillRect(px2 - m * .014, py2 - m * .06, m * .052, m * .088);
+  c.fillStyle = '#E8B848'; // 唯一饱和色
+  c.fillRect(px2 - m * .01, py2 - m * .056, m * .044, m * .08);
+  c.fillStyle = '#10162E';
+  c.fillRect(px2, py2 - m * .086, m * .03, m * .03);
+  c.fillRect(px2 - m * .008, py2 + m * .028, m * .012, m * .022 + wf * m * .004);
+  c.fillRect(px2 + m * .012, py2 + m * .028, m * .012, m * .022 - wf * m * .004);
+  glowDot(c, px2 + m * .05, py2 - m * .03, m * .12 * flick, '#FFD9A0', .55);
+  // 雨（连续帧）
+  c.strokeStyle = hex('#AFC8FF', .3); c.lineWidth = m * .0022; c.beginPath();
+  s.rain.forEach(d => {
+    const ry = ((d[1] + t * d[2] * .4) % 1) * h, rx = d[0] * w;
+    c.moveTo(rx, ry); c.lineTo(rx - m * .012, ry + m * .045);
+  });
+  c.stroke();
+  // 雾带 + 移轴雾化（上下）
+  for (let i = 0; i < 3; i++) {
+    c.fillStyle = hex('#5A6A96', .1);
+    c.fillRect(-m * .03 + Math.sin(t * .2 + i) * m * .02, h * (.5 + i * .1), w + m * .06, h * .06);
+  }
+  const hz = c.createLinearGradient(0, 0, 0, h * .28);
+  hz.addColorStop(0, hex('#1A2448', .8)); hz.addColorStop(1, hex('#1A2448', 0));
+  c.fillStyle = hz; c.fillRect(0, 0, w, h * .28);
+  const hz2 = c.createLinearGradient(0, h * .7, 0, h);
+  hz2.addColorStop(0, hex('#1A2448', 0)); hz2.addColorStop(1, hex('#1A2448', .8));
+  c.fillStyle = hz2; c.fillRect(0, h * .7, w, h * .3);
+  c.restore();
+  // 章节标 + 对话框（打字）
+  c.textAlign = 'center'; c.fillStyle = hex('#C8B890', .9);
+  c.font = `400 ${m * .03}px Georgia,"Noto Serif SC",serif`;
+  c.fillText('第四章 · 灯塔熄灭之夜', w * .5, h * .09);
+  const bx = w * .12, by = h * .78, bw = w * .76, bh = h * .16;
+  c.fillStyle = hex('#0A0E22', .88); c.fillRect(bx, by, bw, bh);
+  c.strokeStyle = '#C8A860'; c.lineWidth = m * .0035; c.strokeRect(bx + m * .008, by + m * .008, bw - m * .016, bh - m * .016);
+  c.fillStyle = '#C8A860'; c.fillRect(bx, by - m * .028, m * .12, m * .032);
+  c.fillStyle = '#141A2E'; c.font = `700 ${m * .022}px ${SANS}`; c.fillText('小萤', bx + m * .06, by - m * .003);
+  const msg = '提着最后一簇火，穿过夜林';
+  const nch = Math.max(1, Math.floor((q % 3.4) / 3.4 * msg.length));
+  c.fillStyle = '#EDE6D4'; c.font = `italic 400 ${m * .034}px Georgia,"Noto Serif SC",serif`;
+  c.fillText(msg.slice(0, nch), w * .5, by + bh * .62);
+};
+
+```

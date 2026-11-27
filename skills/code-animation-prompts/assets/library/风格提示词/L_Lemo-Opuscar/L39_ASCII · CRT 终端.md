@@ -125,3 +125,74 @@ How our demo was made (story, shots, score, end card, build): [DEMO.md](DEMO.md)
 ### 示范片
 
 Tranquility.log
+
+下面是我们自己写的参考实现：一个绘制函数 S.L39(c, w, h, t, s)，c 是 canvas 的 2D context，w/h 是宽高，t 是秒，s 是给这个函数存状态用的空对象。公共的小工具函数在 ../A-G_代码样片/_公共函数.js 里。
+
+```js
+S.L39 = (c, w, h, t, s) => {
+  const m = Math.min(w, h);
+  if (!s.init) {
+    s.init = 1; const r = rng(39);
+    s.stars = []; for (let i = 0; i < 34; i++) s.stars.push([r(), r() * .6, r()]);
+    const [pc, px] = offscreen(4, 4, 1);
+    px.fillStyle = 'rgba(0,0,0,0)'; px.fillRect(0, 0, 4, 4);
+    px.fillStyle = 'rgba(20,10,0,.55)'; px.fillRect(0, 0, 4, 1.2);
+    s.scr = pc;
+    s.logs = ['唤醒序列启动', '生命维持正常', '信号捕获中', '绘制家园'];
+    s.cnt = []; for (let i = 0; i < 10; i++) s.cnt.push(r());
+  }
+  const D = 12, q = t % D;
+  c.fillStyle = '#120a02'; c.fillRect(0, 0, w, h);
+  const cw = 26 + 16 * (.5 - .5 * Math.cos(q / D * TAU)), ch = cw * 1.9;
+  const cols = Math.floor(w / cw), rows = Math.floor((h * .74) / ch);
+  const ramp = ' .,:;-~=+*#%@';
+  c.font = `${ch * .86}px ${MONO}`; c.textAlign = 'center'; c.textBaseline = 'middle';
+  for (let ry = 0; ry < rows; ry++) {
+    for (let rx = 0; rx < cols; rx++) {
+      const u = rx / cols, v = ry / rows;
+      let d = .05 + .05 * nz(u * 5, v * 5, t * .08);
+      for (const [sx, sy, ph] of s.stars) {
+        const dx = u - sx, dy = v - sy, d2 = dx * dx + dy * dy;
+        if (d2 < .0012) d += (.55 + .45 * Math.sin(t * 2.2 + ph * TAU)) * (1 - d2 / .0012);
+      }
+      const hor = .66 + .05 * Math.sin(u * 7.5 + 1) + .025 * Math.sin(u * 13 + 2);
+      if (v > hor) d = .3 + .22 * (.5 + .5 * nz(u * 7, v * 7, .5));
+      const dx2 = u - .5, dy2 = (v - (hor - .012)) * 1.5, dd = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+      if (dd < .21) {
+        d = .5 + .3 * (1 - dd / .21);
+        if (Math.abs(dd - .19) < .018) d = 1;
+        if (Math.abs(dx2) < .006 && dy2 < 0 && dy2 > -.16) d = .95;
+      }
+      if (d <= .09) continue;
+      const gi = clamp(Math.round(d * 12), 1, 12);
+      c.fillStyle = hex('#ffb347', .2 + d * .78);
+      c.fillText(ramp[gi], rx * cw + cw / 2, h * .05 + ry * ch + ch / 2);
+    }
+  }
+  const pat = c.createPattern(s.scr, 'repeat');
+  c.globalAlpha = .3; c.fillStyle = pat; c.fillRect(0, 0, w, h); c.globalAlpha = 1;
+  c.fillStyle = hex('#ffb347', .03 + .03 * (.5 + .5 * Math.sin(t * 23))); c.fillRect(0, 0, w, h);
+  c.strokeStyle = hex('#ffb347', .3); c.lineWidth = m * .006;
+  c.beginPath();
+  c.moveTo(m * .02, m * .04); c.lineTo(w - m * .02, m * .04);
+  c.moveTo(m * .02, h - m * .04); c.lineTo(w - m * .02, h - m * .04); c.stroke();
+  const ly = h * .8;
+  c.fillStyle = hex('#ffb347', .22); c.fillRect(w * .03, ly, w * .94, 1);
+  c.fillStyle = '#ffb347'; c.fillRect(w * .03, ly + m * .026, m * .085, m * .042);
+  c.fillStyle = '#120a02'; c.font = `700 ${m * .028}px ${MONO}`; c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillText('LOG', w * .03 + m * .042, ly + m * .047);
+  const li = Math.floor(q / 3) % s.logs.length;
+  const txt = s.logs[li], nch = clamp(Math.floor((q % 3) * 9), 0, txt.length);
+  c.fillStyle = '#ffb347'; c.textAlign = 'left';
+  c.font = `${m * .038}px ${MONO}`;
+  c.fillText('>' + txt.slice(0, nch), w * .15, ly + m * .047);
+  const cursorOn = Math.floor(t * 2.6) % 2 === 0;
+  if (cursorOn) c.fillRect(w * .15 + m * .062 + nch * m * .042, ly + m * .028, m * .02, m * .04);
+  c.textAlign = 'right'; c.font = `${m * .026}px ${MONO}`; c.fillStyle = hex('#ffb347', .6);
+  c.fillText('REC ' + String(Math.floor(t * 7) % 1000).padStart(3, '0') + ' · ' + cols + '×' + rows, w * .96, ly + m * .047);
+  const vg = c.createRadialGradient(w / 2, h / 2, m * .2, w / 2, h / 2, m * .85);
+  vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(10,5,0,.55)');
+  c.fillStyle = vg; c.fillRect(0, 0, w, h);
+};
+
+```
